@@ -6,15 +6,18 @@ $db = require __DIR__ . '/db.php';
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
+    'language'=>'ru_RU',
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'activity'=>['class'=>\app\components\ActivityComponent::class ,'modelClass' => \app\models\Activity::class],
+        'day'=>['class'=>\app\components\DayComponent::class ,'modelClass' => \app\models\Day::class],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => '15ATy42khozl1L92ZTgkPsvxoy7sNvJH',
+            'cookieValidationKey' => 'QTnl79CJkGp3-cD-tgNhBoKNL6iEMnGl',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -43,14 +46,14 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        */
+
     ],
     'params' => $params,
 ];
@@ -61,7 +64,7 @@ if (YII_ENV_DEV) {
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        //'allowedIPs' => ['127.0.0.1', '::1'],
+        'allowedIPs' => ['*'],
     ];
 
     $config['bootstrap'][] = 'gii';

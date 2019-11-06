@@ -4,9 +4,9 @@
 namespace app\models;
 
 
-use yii\base\Model;
+use app\base\BaseModel;
 
-class Activity extends Model
+class Activity extends BaseModel
 {
     public $title;
 

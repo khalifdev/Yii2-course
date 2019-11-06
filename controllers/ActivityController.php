@@ -13,8 +13,7 @@ class ActivityController extends BaseController
     public function actions()
     {
         return [
-            'create'=>['class'=>CreateAction::class,'name' => 'Artem'],
-            'new'=>['class'=>CreateAction::class,'name' => 'Pavel']
+            'create'=>['class'=>CreateAction::class]
         ];
     }
 
