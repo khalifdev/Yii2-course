@@ -1,36 +1,25 @@
 <?php
-declare(strict_types=1);
 
 namespace app\components;
 
 
+use app\base\BaseComponent;
 use app\models\Activity;
-use yii\base\Component;
 
-class ActivityComponent extends Component
+class ActivityComponent extends BaseComponent
 {
     public $modelClass;
-
-//    public function init()
-//    {
-//        parent::init();
-//
-//        //todo f
-//    }
 
     public function getModel()
     {
         return new $this->modelClass;
     }
 
-    public function addActivity(Activity $activity): bool
+    public function addActivity(Activity $activity)
     {
-//        $activity->title = null;
         if ($activity->validate()) {
             return true;
         }
-
-
 
         return false;
     }

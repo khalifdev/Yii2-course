@@ -4,19 +4,15 @@
 namespace app\controllers\actions\activity;
 
 
+use app\base\BaseAction;
 use app\components\ActivityComponent;
 use app\models\Activity;
-use yii\base\Action;
 
-class CreateAction extends Action
+class CreateAction extends BaseAction
 {
-    public $name;
-
     public function run()
     {
-        $comp=\Yii::createObject(['class'=>ActivityComponent::class,'modelClass' => Activity::class]);
         $model = \Yii::$app->activity->getModel();
-//        $model = $comp->getModel();
 
 //        \Yii::$app->session->set('sdf','val');
 //        \Yii::$app->session->get('sdf','val');
@@ -28,6 +24,6 @@ class CreateAction extends Action
             }
         }
 
-        return $this->controller->render('create', ['name' => $this->name, 'model' => $model]);
+        return $this->controller->render('create', ['model' => $model]);
     }
 }

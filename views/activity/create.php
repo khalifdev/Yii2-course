@@ -4,7 +4,6 @@
  */
 ?>
 <h1>Новая активность</h1>
-<h4><?=$name;?></h4>
 <div class="row">
     <div class="col-md-8">
         <?php $form = \yii\bootstrap\ActiveForm::begin();?>
