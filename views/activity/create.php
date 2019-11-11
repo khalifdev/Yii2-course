@@ -1,5 +1,7 @@
 <?php
-use \yii\bootstrap\ActiveForm;
+
+use yii\bootstrap\ActiveForm;
+
 /**
  * @var $model \app\models\Activity
  */
@@ -13,8 +15,8 @@ use \yii\bootstrap\ActiveForm;
             <?= $form->field($model, 'date'); ?>
             <?= $form->field($model, 'startTime')->input('time'); ?>
             <?= $form->field($model, 'endTime')->input('time'); ?>
-            <?=$form->field($model,'isBlocked')->checkbox()?>
-            <?=$form->field($model,'isRepeat')->checkbox()?>
+            <?=$form->field($model,'isBlocking')->checkbox()?>
+            <?=$form->field($model,'isRepeated')->checkbox()?>
             <?= $form->field($model, 'repeatType')->dropDownList([
                 0=>'Каждый день',1=>'Каждую неделю', 2=>'Каждый месяц']) ?>
 
@@ -23,7 +25,7 @@ use \yii\bootstrap\ActiveForm;
             <?= $form->field($model, 'repeatEmail', ['enableClientValidation' => false, 'enableAjaxValidation' => true]); ?>
             <?=$form->field($model,'files[]')->fileInput(['multiple' => true])?>
 
-            <button type="submit" class="btn btn-default">Сохранить</button>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
         <?php ActiveForm::end(); ?>
     </div>
 </div>

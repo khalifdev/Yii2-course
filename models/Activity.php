@@ -18,9 +18,9 @@ class Activity extends BaseModel
 
     public $endTime;
 
-    public $isBlocked;
+    public $isBlocking;
 
-    public $isRepeat;
+    public $isRepeated;
     public $repeatType;
 
     const DAY = 0;
@@ -56,7 +56,7 @@ class Activity extends BaseModel
             [['title', 'date', 'startTime', 'endTime'], 'string'],
             ['date', 'date', 'format' => 'php:Y-m-d'],
             ['description','string','max' => 300, 'min'=>1],
-            [['isBlocked','isRepeat', 'useNotification'], 'boolean'],
+            [['isBlocking','isRepeated', 'useNotification'], 'boolean'],
             ['repeatType', 'in', 'range' => array_keys(self::REPEAT_TYPE)],
             ['email', 'email'],
             [['email', 'repeatEmail'], 'required', 'when' => function ($model) {
@@ -75,13 +75,13 @@ class Activity extends BaseModel
             'date'=>'Дата',
             'startTime'=>'Время начала',
             'endTime'=>'Время окончания',
-            'isBlocked'=>'Блокирующее событие',
+            'isBlocking'=>'Блокирующее событие',
             'isRepeated'=>'Повторяющееся',
             'repeatType'=>'Частота повторения',
             'email'=>'Ваш E-mail',
             'repeatEmail'=>'Подтвердите E-mail',
             'useNotification'=>'Оповещать',
-            'file'=>'Файлы'
+            'files'=>'Файлы'
         ];
     }
 
