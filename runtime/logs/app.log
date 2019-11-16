@@ -2439,3 +2439,2083 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1573138459.2672
     'REQUEST_TIME' => 1573138459
 ]
+2019-11-10 11:41:30 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Activity::time in /data/mysite.local/app/vendor/yiisoft/yii2/base/Component.php:154
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/helpers/BaseHtml.php(2231): yii\base\Component->__get('time')
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/helpers/BaseHtml.php(1353): yii\helpers\BaseHtml::getAttributeValue(Object(app\models\Activity), 'time')
+#2 /data/mysite.local/app/vendor/yiisoft/yii2/widgets/ActiveField.php(375): yii\helpers\BaseHtml::activeInput('time', Object(app\models\Activity), 'time', Array)
+#3 /data/mysite.local/app/views/activity/create.php(14): yii\widgets\ActiveField->input('time')
+#4 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(348): require('/data/mysite.lo...')
+#5 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/data/mysite.lo...', Array)
+#6 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/data/mysite.lo...', Array, Object(app\controllers\ActivityController))
+#7 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('create', Array, Object(app\controllers\ActivityController))
+#8 /data/mysite.local/app/controllers/actions/activity/CreateAction.php(31): yii\base\Controller->render('create', Array)
+#9 [internal function]: app\controllers\actions\activity\CreateAction->run()
+#10 /data/mysite.local/app/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#11 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#12 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#13 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('activity/create', Array)
+#14 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#16 {main}
+2019-11-10 11:41:30 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'r9mrd4o1qutljktkblpfl7sur2'
+    '_csrf' => '1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=r9mrd4o1qutljktkblpfl7sur2; _csrf=1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_PURPOSE' => 'prefetch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '17350'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/activity/create'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573386089.9194
+    'REQUEST_TIME' => 1573386089
+]
+2019-11-10 11:41:31 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Activity::time in /data/mysite.local/app/vendor/yiisoft/yii2/base/Component.php:154
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/helpers/BaseHtml.php(2231): yii\base\Component->__get('time')
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/helpers/BaseHtml.php(1353): yii\helpers\BaseHtml::getAttributeValue(Object(app\models\Activity), 'time')
+#2 /data/mysite.local/app/vendor/yiisoft/yii2/widgets/ActiveField.php(375): yii\helpers\BaseHtml::activeInput('time', Object(app\models\Activity), 'time', Array)
+#3 /data/mysite.local/app/views/activity/create.php(14): yii\widgets\ActiveField->input('time')
+#4 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(348): require('/data/mysite.lo...')
+#5 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/data/mysite.lo...', Array)
+#6 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/data/mysite.lo...', Array, Object(app\controllers\ActivityController))
+#7 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('create', Array, Object(app\controllers\ActivityController))
+#8 /data/mysite.local/app/controllers/actions/activity/CreateAction.php(31): yii\base\Controller->render('create', Array)
+#9 [internal function]: app\controllers\actions\activity\CreateAction->run()
+#10 /data/mysite.local/app/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#11 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#12 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#13 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('activity/create', Array)
+#14 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#16 {main}
+2019-11-10 11:41:31 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'r9mrd4o1qutljktkblpfl7sur2'
+    '_csrf' => '1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=r9mrd4o1qutljktkblpfl7sur2; _csrf=1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '17351'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/activity/create'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573386091.1321
+    'REQUEST_TIME' => 1573386091
+]
+2019-11-11 06:00:07 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][error][yii\base\ViewNotFoundException] yii\base\ViewNotFoundException: The view file does not exist: /data/mysite.local/app/views/activity/view.php in /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php:233
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/data/mysite.lo...', Array, Object(app\controllers\ActivityController))
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('view', Array, Object(app\controllers\ActivityController))
+#2 /data/mysite.local/app/controllers/actions/activity/CreateAction.php(28): yii\base\Controller->render('view', Array)
+#3 [internal function]: app\controllers\actions\activity\CreateAction->run()
+#4 /data/mysite.local/app/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#5 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#6 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#7 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('activity/create', Array)
+#8 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#10 {main}
+2019-11-11 06:00:07 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][info][application] $_GET = []
+
+$_POST = [
+    '_csrf' => 'WgRWtRYPpHNTLBZXL-6yHCADRnNcbyt7t0SzwsjvKk4PfGHZYGWWJn5ILm5fj4NIRlFyRAsmZkvSad2Not5aeg=='
+    'Activity' => [
+        'title' => 'Акт 1'
+        'description' => 'Frn'
+        'date' => '04.11.2019'
+        'startTime' => ''
+        'endTime' => ''
+        'isBlocked' => '1'
+        'isRepeat' => '1'
+        'repeatType' => '0'
+        'useNotification' => '1'
+        'email' => 'r@mail.ru'
+        'repeatEmail' => ''
+        'file' => ''
+    ]
+]
+
+$_FILES = [
+    'Activity' => [
+        'name' => [
+            'file' => ''
+        ]
+        'type' => [
+            'file' => ''
+        ]
+        'tmp_name' => [
+            'file' => ''
+        ]
+        'error' => [
+            'file' => 4
+        ]
+        'size' => [
+            'file' => 0
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'r9mrd4o1qutljktkblpfl7sur2'
+    '_csrf' => '1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'lastPage' => 1
+    ]
+    'lastPage' => '/activity/create'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=r9mrd4o1qutljktkblpfl7sur2; _csrf=1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/activity/create'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryr4c9TPm4zpxvsRlG'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONTENT_LENGTH' => '2000'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '19041'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/activity/create'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '2000'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryr4c9TPm4zpxvsRlG'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573452007.64
+    'REQUEST_TIME' => 1573452007
+]
+2019-11-11 10:05:04 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][error][yii\base\ErrorException:256] yii\base\ErrorException: Exception (Invalid Configuration) 'yii\base\InvalidConfigException' with message 'Failed to instantiate component or class "files".' 
+
+in /data/mysite.local/app/vendor/yiisoft/yii2/di/Container.php:449
+
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/di/Container.php(374): yii\di\Container->getDependencies('files')
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('files', Array, Array)
+#2 /data/mysite.local/app/vendor/yiisoft/yii2/BaseYii.php(351): yii\di\Container->get('files', Array, Array)
+#3 /data/mysite.local/app/vendor/yiisoft/yii2/validators/Validator.php(227): yii\BaseYii::createObject(Array)
+#4 /data/mysite.local/app/vendor/yiisoft/yii2/base/Model.php(468): yii\validators\Validator::createValidator('files', Object(app\models\Activity), Array, Array)
+#5 /data/mysite.local/app/vendor/yiisoft/yii2/base/Model.php(420): yii\base\Model->createValidators()
+#6 /data/mysite.local/app/vendor/yiisoft/yii2/base/Model.php(189): yii\base\Model->getValidators()
+#7 /data/mysite.local/app/vendor/yiisoft/yii2/base/Model.php(816): yii\base\Model->scenarios()
+#8 /data/mysite.local/app/vendor/yiisoft/yii2/base/Model.php(434): yii\base\Model->activeAttributes()
+#9 /data/mysite.local/app/vendor/yiisoft/yii2/base/Model.php(494): yii\base\Model->getActiveValidators('title')
+#10 /data/mysite.local/app/vendor/yiisoft/yii2/widgets/ActiveField.php(929): yii\base\Model->isAttributeRequired('title')
+#11 /data/mysite.local/app/vendor/yiisoft/yii2/widgets/ActiveField.php(405): yii\widgets\ActiveField->addAriaAttributes(Array)
+#12 /data/mysite.local/app/vendor/yiisoft/yii2/widgets/ActiveField.php(207): yii\widgets\ActiveField->textInput()
+#13 /data/mysite.local/app/vendor/yiisoft/yii2-bootstrap/src/ActiveField.php(187): yii\widgets\ActiveField->render(NULL)
+#14 /data/mysite.local/app/vendor/yiisoft/yii2/widgets/ActiveField.php(176): yii\bootstrap\ActiveField->render()
+#15 /data/mysite.local/app/views/activity/create.php(11): yii\widgets\ActiveField->__toString()
+#16 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(348): require('/data/mysite.lo...')
+#17 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/data/mysite.lo...', Array)
+#18 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/data/mysite.lo...', Array, Object(app\controllers\ActivityController))
+#19 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('create', Array, Object(app\controllers\ActivityController))
+#20 /data/mysite.local/app/controllers/actions/activity/CreateAction.php(32): yii\base\Controller->render('create', Array)
+#21 [internal function]: app\controllers\actions\activity\CreateAction->run()
+#22 /data/mysite.local/app/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#23 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#24 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#25 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('activity/create', Array)
+#26 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#27 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#28 {main} in /data/mysite.local/app/vendor/yiisoft/yii2/base/ErrorHandler.php:317
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(256, 'Exception (Inva...', '/data/mysite.lo...', 317, Array)
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/base/ErrorHandler.php(317): trigger_error('Exception (Inva...', 256)
+#2 /data/mysite.local/app/vendor/yiisoft/yii2/widgets/ActiveField.php(178): yii\base\ErrorHandler::convertExceptionToError(Object(yii\base\InvalidConfigException))
+#3 /data/mysite.local/app/views/activity/create.php(11): yii\widgets\ActiveField->__toString()
+#4 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(348): require('/data/mysite.lo...')
+#5 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/data/mysite.lo...', '[<span class="s...')
+#6 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/data/mysite.lo...', Array, Object(app\controllers\ActivityController))
+#7 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('create', Array, Object(app\controllers\ActivityController))
+#8 /data/mysite.local/app/controllers/actions/activity/CreateAction.php(32): yii\base\Controller->render('create', Array)
+#9 [internal function]: app\controllers\actions\activity\CreateAction->run()
+#10 /data/mysite.local/app/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#11 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#12 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#13 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('activity/create', Array)
+#14 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#16 {main}
+    in /data/mysite.local/app/views/activity/create.php:11
+    in /data/mysite.local/app/controllers/actions/activity/CreateAction.php:32
+2019-11-11 10:05:03 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'r9mrd4o1qutljktkblpfl7sur2'
+    '_csrf' => '1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=r9mrd4o1qutljktkblpfl7sur2; _csrf=1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '20485'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/activity/create'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573466703.5789
+    'REQUEST_TIME' => 1573466703
+]
+2019-11-11 12:32:02 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][error][yii\base\ErrorException:8] yii\base\ErrorException: Array to string conversion in /data/mysite.local/app/vendor/yiisoft/yii2/helpers/BaseHtml.php:562
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/helpers/BaseHtml.php(562): yii\base\ErrorHandler->handleError(8, 'Array to string...', '/data/mysite.lo...', 562, Array)
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/helpers/BaseHtml.php(1361): yii\helpers\BaseHtml::input('file', 'Activity[files]', Array, Array)
+#2 /data/mysite.local/app/vendor/yiisoft/yii2/helpers/BaseHtml.php(1504): yii\helpers\BaseHtml::activeInput('file', Object(app\models\Activity), 'files', Array)
+#3 /data/mysite.local/app/vendor/yiisoft/yii2/widgets/ActiveField.php(491): yii\helpers\BaseHtml::activeFileInput(Object(app\models\Activity), 'files', Array)
+#4 /data/mysite.local/app/views/activity/create.php(24): yii\widgets\ActiveField->fileInput()
+#5 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(348): require('/data/mysite.lo...')
+#6 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/data/mysite.lo...', Array)
+#7 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/data/mysite.lo...', Array, Object(app\controllers\ActivityController))
+#8 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('create', Array, Object(app\controllers\ActivityController))
+#9 /data/mysite.local/app/controllers/actions/activity/CreateAction.php(32): yii\base\Controller->render('create', Array)
+#10 [internal function]: app\controllers\actions\activity\CreateAction->run()
+#11 /data/mysite.local/app/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#12 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#13 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#14 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('activity/create', Array)
+#15 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#17 {main}
+2019-11-11 12:32:01 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'r9mrd4o1qutljktkblpfl7sur2'
+    '_csrf' => '1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=r9mrd4o1qutljktkblpfl7sur2; _csrf=1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '20769'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/activity/create'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573475521.6724
+    'REQUEST_TIME' => 1573475521
+]
+2019-11-11 12:35:32 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][error][yii\base\ErrorException:8] yii\base\ErrorException: Array to string conversion in /data/mysite.local/app/vendor/yiisoft/yii2/helpers/BaseHtml.php:562
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/helpers/BaseHtml.php(562): yii\base\ErrorHandler->handleError(8, 'Array to string...', '/data/mysite.lo...', 562, Array)
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/helpers/BaseHtml.php(1361): yii\helpers\BaseHtml::input('file', 'Activity[files]', Array, Array)
+#2 /data/mysite.local/app/vendor/yiisoft/yii2/helpers/BaseHtml.php(1504): yii\helpers\BaseHtml::activeInput('file', Object(app\models\Activity), 'files', Array)
+#3 /data/mysite.local/app/vendor/yiisoft/yii2/widgets/ActiveField.php(491): yii\helpers\BaseHtml::activeFileInput(Object(app\models\Activity), 'files', Array)
+#4 /data/mysite.local/app/views/activity/create.php(24): yii\widgets\ActiveField->fileInput(Array)
+#5 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(348): require('/data/mysite.lo...')
+#6 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/data/mysite.lo...', Array)
+#7 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/data/mysite.lo...', Array, Object(app\controllers\ActivityController))
+#8 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('create', Array, Object(app\controllers\ActivityController))
+#9 /data/mysite.local/app/controllers/actions/activity/CreateAction.php(32): yii\base\Controller->render('create', Array)
+#10 [internal function]: app\controllers\actions\activity\CreateAction->run()
+#11 /data/mysite.local/app/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#12 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#13 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#14 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('activity/create', Array)
+#15 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#17 {main}
+2019-11-11 12:35:31 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'r9mrd4o1qutljktkblpfl7sur2'
+    '_csrf' => '1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=r9mrd4o1qutljktkblpfl7sur2; _csrf=1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '20885'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/activity/create'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573475730.726
+    'REQUEST_TIME' => 1573475730
+]
+2019-11-11 12:37:08 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][error][yii\base\ErrorException:8] yii\base\ErrorException: Array to string conversion in /data/mysite.local/app/vendor/yiisoft/yii2/helpers/BaseHtml.php:562
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/helpers/BaseHtml.php(562): yii\base\ErrorHandler->handleError(8, 'Array to string...', '/data/mysite.lo...', 562, Array)
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/helpers/BaseHtml.php(1361): yii\helpers\BaseHtml::input('file', 'Activity[files]', Array, Array)
+#2 /data/mysite.local/app/vendor/yiisoft/yii2/helpers/BaseHtml.php(1504): yii\helpers\BaseHtml::activeInput('file', Object(app\models\Activity), 'files', Array)
+#3 /data/mysite.local/app/vendor/yiisoft/yii2/widgets/ActiveField.php(491): yii\helpers\BaseHtml::activeFileInput(Object(app\models\Activity), 'files', Array)
+#4 /data/mysite.local/app/views/activity/create.php(24): yii\widgets\ActiveField->fileInput(Array)
+#5 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(348): require('/data/mysite.lo...')
+#6 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/data/mysite.lo...', Array)
+#7 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/data/mysite.lo...', Array, Object(app\controllers\ActivityController))
+#8 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('create', Array, Object(app\controllers\ActivityController))
+#9 /data/mysite.local/app/controllers/actions/activity/CreateAction.php(32): yii\base\Controller->render('create', Array)
+#10 [internal function]: app\controllers\actions\activity\CreateAction->run()
+#11 /data/mysite.local/app/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#12 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#13 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#14 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('activity/create', Array)
+#15 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#17 {main}
+2019-11-11 12:37:07 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'r9mrd4o1qutljktkblpfl7sur2'
+    '_csrf' => '1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=r9mrd4o1qutljktkblpfl7sur2; _csrf=1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '20916'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/activity/create'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573475826.8516
+    'REQUEST_TIME' => 1573475826
+]
+2019-11-11 12:44:40 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][error][TypeError] TypeError: Argument 1 passed to app\components\ActivityComponent::saveFiles() must be an instance of yii\web\UploadedFile, array given, called in /data/mysite.local/app/components/ActivityComponent.php on line 25 and defined in /data/mysite.local/app/components/ActivityComponent.php:35
+Stack trace:
+#0 /data/mysite.local/app/components/ActivityComponent.php(25): app\components\ActivityComponent->saveFiles(Array)
+#1 /data/mysite.local/app/controllers/actions/activity/CreateAction.php(25): app\components\ActivityComponent->addActivity(Object(app\models\Activity))
+#2 [internal function]: app\controllers\actions\activity\CreateAction->run()
+#3 /data/mysite.local/app/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#4 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#5 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#6 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('activity/create', Array)
+#7 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#9 {main}
+2019-11-11 12:44:40 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][info][application] $_GET = []
+
+$_POST = [
+    '_csrf' => 'pkH6av9POQ9Ojcev83hf3kYgPa15sk9xbc0cmiZHCaPzOc0GiSULWmPp_5aDGW6KIHIJmi77AkEI4HLVTHZ5lw=='
+    'Activity' => [
+        'title' => 'sdas'
+        'description' => 'asdsa'
+        'date' => '21.01.2222'
+        'startTime' => ''
+        'endTime' => ''
+        'isBlocked' => '0'
+        'isRepeat' => '0'
+        'repeatType' => '0'
+        'useNotification' => '0'
+        'email' => ''
+        'repeatEmail' => ''
+        'files' => [
+            0 => ''
+        ]
+    ]
+]
+
+$_FILES = [
+    'Activity' => [
+        'name' => [
+            'files' => [
+                0 => '2.jpg'
+                1 => '3.jpg'
+            ]
+        ]
+        'type' => [
+            'files' => [
+                0 => 'image/jpeg'
+                1 => 'image/jpeg'
+            ]
+        ]
+        'tmp_name' => [
+            'files' => [
+                0 => '/tmp/php9LwfPF'
+                1 => '/tmp/phpab4DME'
+            ]
+        ]
+        'error' => [
+            'files' => [
+                0 => 0
+                1 => 0
+            ]
+        ]
+        'size' => [
+            'files' => [
+                0 => 4332
+                1 => 3445
+            ]
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'r9mrd4o1qutljktkblpfl7sur2'
+    '_csrf' => '1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'lastPage' => 1
+    ]
+    'lastPage' => '/activity/create'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=r9mrd4o1qutljktkblpfl7sur2; _csrf=1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/activity/create'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarySZrf11i6SveU3i9j'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONTENT_LENGTH' => '9585'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '21038'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/activity/create'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '9585'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarySZrf11i6SveU3i9j'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573476280.3762
+    'REQUEST_TIME' => 1573476280
+]
+2019-11-11 12:46:51 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][error][TypeError] TypeError: Argument 1 passed to app\components\ActivityComponent::saveFiles() must be an instance of yii\web\UploadedFile, array given, called in /data/mysite.local/app/components/ActivityComponent.php on line 25 and defined in /data/mysite.local/app/components/ActivityComponent.php:35
+Stack trace:
+#0 /data/mysite.local/app/components/ActivityComponent.php(25): app\components\ActivityComponent->saveFiles(Array)
+#1 /data/mysite.local/app/controllers/actions/activity/CreateAction.php(25): app\components\ActivityComponent->addActivity(Object(app\models\Activity))
+#2 [internal function]: app\controllers\actions\activity\CreateAction->run()
+#3 /data/mysite.local/app/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#4 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#5 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#6 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('activity/create', Array)
+#7 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#9 {main}
+2019-11-11 12:46:50 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][info][application] $_GET = []
+
+$_POST = [
+    '_csrf' => 'pkH6av9POQ9Ojcev83hf3kYgPa15sk9xbc0cmiZHCaPzOc0GiSULWmPp_5aDGW6KIHIJmi77AkEI4HLVTHZ5lw=='
+    'Activity' => [
+        'title' => 'sdas'
+        'description' => 'asdsa'
+        'date' => '21.01.2222'
+        'startTime' => ''
+        'endTime' => ''
+        'isBlocked' => '0'
+        'isRepeat' => '0'
+        'repeatType' => '0'
+        'useNotification' => '0'
+        'email' => ''
+        'repeatEmail' => ''
+        'files' => [
+            0 => ''
+        ]
+    ]
+]
+
+$_FILES = [
+    'Activity' => [
+        'name' => [
+            'files' => [
+                0 => '2.jpg'
+                1 => '3.jpg'
+            ]
+        ]
+        'type' => [
+            'files' => [
+                0 => 'image/jpeg'
+                1 => 'image/jpeg'
+            ]
+        ]
+        'tmp_name' => [
+            'files' => [
+                0 => '/tmp/phpSMXmxl'
+                1 => '/tmp/php2Mg8h2'
+            ]
+        ]
+        'error' => [
+            'files' => [
+                0 => 0
+                1 => 0
+            ]
+        ]
+        'size' => [
+            'files' => [
+                0 => 4332
+                1 => 3445
+            ]
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'r9mrd4o1qutljktkblpfl7sur2'
+    '_csrf' => '1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=r9mrd4o1qutljktkblpfl7sur2; _csrf=1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/activity/create'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarySZrf11i6SveU3i9j'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONTENT_LENGTH' => '9585'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '21121'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/activity/create'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '9585'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarySZrf11i6SveU3i9j'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573476410.2334
+    'REQUEST_TIME' => 1573476410
+]
+2019-11-11 12:53:48 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][error][TypeError] TypeError: Argument 1 passed to app\components\ActivityComponent::genFileName() must be an instance of yii\web\UploadedFile, string given, called in /data/mysite.local/app/components/ActivityComponent.php on line 40 and defined in /data/mysite.local/app/components/ActivityComponent.php:60
+Stack trace:
+#0 /data/mysite.local/app/components/ActivityComponent.php(40): app\components\ActivityComponent->genFileName('')
+#1 /data/mysite.local/app/components/ActivityComponent.php(25): app\components\ActivityComponent->saveFiles(Array)
+#2 /data/mysite.local/app/controllers/actions/activity/CreateAction.php(25): app\components\ActivityComponent->addActivity(Object(app\models\Activity))
+#3 [internal function]: app\controllers\actions\activity\CreateAction->run()
+#4 /data/mysite.local/app/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#5 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#6 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#7 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('activity/create', Array)
+#8 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#10 {main}
+2019-11-11 12:53:47 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][info][application] $_GET = []
+
+$_POST = [
+    '_csrf' => 'pkH6av9POQ9Ojcev83hf3kYgPa15sk9xbc0cmiZHCaPzOc0GiSULWmPp_5aDGW6KIHIJmi77AkEI4HLVTHZ5lw=='
+    'Activity' => [
+        'title' => 'sdas'
+        'description' => 'asdsa'
+        'date' => '21.01.2222'
+        'startTime' => ''
+        'endTime' => ''
+        'isBlocked' => '0'
+        'isRepeat' => '0'
+        'repeatType' => '0'
+        'useNotification' => '0'
+        'email' => ''
+        'repeatEmail' => ''
+        'files' => [
+            0 => ''
+        ]
+    ]
+]
+
+$_FILES = [
+    'Activity' => [
+        'name' => [
+            'files' => [
+                0 => '2.jpg'
+                1 => '3.jpg'
+            ]
+        ]
+        'type' => [
+            'files' => [
+                0 => 'image/jpeg'
+                1 => 'image/jpeg'
+            ]
+        ]
+        'tmp_name' => [
+            'files' => [
+                0 => '/tmp/phpTS7em3'
+                1 => '/tmp/phpsvqoq4'
+            ]
+        ]
+        'error' => [
+            'files' => [
+                0 => 0
+                1 => 0
+            ]
+        ]
+        'size' => [
+            'files' => [
+                0 => 4332
+                1 => 3445
+            ]
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'r9mrd4o1qutljktkblpfl7sur2'
+    '_csrf' => '1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=r9mrd4o1qutljktkblpfl7sur2; _csrf=1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/activity/create'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarySZrf11i6SveU3i9j'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONTENT_LENGTH' => '9585'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '21288'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/activity/create'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '9585'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarySZrf11i6SveU3i9j'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573476827.3037
+    'REQUEST_TIME' => 1573476827
+]
+2019-11-11 12:56:26 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][error][yii\base\ErrorException:2] yii\base\ErrorException: Illegal string offset 'saved' in /data/mysite.local/app/components/ActivityComponent.php:46
+Stack trace:
+#0 /data/mysite.local/app/components/ActivityComponent.php(46): yii\base\ErrorHandler->handleError(2, 'Illegal string ...', '/data/mysite.lo...', 46, Array)
+#1 /data/mysite.local/app/components/ActivityComponent.php(25): app\components\ActivityComponent->saveFiles(Array)
+#2 /data/mysite.local/app/controllers/actions/activity/CreateAction.php(25): app\components\ActivityComponent->addActivity(Object(app\models\Activity))
+#3 [internal function]: app\controllers\actions\activity\CreateAction->run()
+#4 /data/mysite.local/app/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#5 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#6 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#7 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('activity/create', Array)
+#8 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#10 {main}
+2019-11-11 12:56:25 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][info][application] $_GET = []
+
+$_POST = [
+    '_csrf' => 'pkH6av9POQ9Ojcev83hf3kYgPa15sk9xbc0cmiZHCaPzOc0GiSULWmPp_5aDGW6KIHIJmi77AkEI4HLVTHZ5lw=='
+    'Activity' => [
+        'title' => 'sdas'
+        'description' => 'asdsa'
+        'date' => '21.01.2222'
+        'startTime' => ''
+        'endTime' => ''
+        'isBlocked' => '0'
+        'isRepeat' => '0'
+        'repeatType' => '0'
+        'useNotification' => '0'
+        'email' => ''
+        'repeatEmail' => ''
+        'files' => [
+            0 => ''
+        ]
+    ]
+]
+
+$_FILES = [
+    'Activity' => [
+        'name' => [
+            'files' => [
+                0 => '2.jpg'
+                1 => '3.jpg'
+            ]
+        ]
+        'type' => [
+            'files' => [
+                0 => 'image/jpeg'
+                1 => 'image/jpeg'
+            ]
+        ]
+        'tmp_name' => [
+            'files' => [
+                0 => '/tmp/phpACfnZ0'
+                1 => '/tmp/phpY3IoyX'
+            ]
+        ]
+        'error' => [
+            'files' => [
+                0 => 0
+                1 => 0
+            ]
+        ]
+        'size' => [
+            'files' => [
+                0 => 4332
+                1 => 3445
+            ]
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'r9mrd4o1qutljktkblpfl7sur2'
+    '_csrf' => '1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=r9mrd4o1qutljktkblpfl7sur2; _csrf=1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/activity/create'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarySZrf11i6SveU3i9j'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONTENT_LENGTH' => '9585'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '21328'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/activity/create'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => '9585'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarySZrf11i6SveU3i9j'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573476984.9479
+    'REQUEST_TIME' => 1573476984
+]
+2019-11-11 19:25:24 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: day/ in /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php:128
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('day', Array)
+#2 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2019-11-11 19:25:24 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'r9mrd4o1qutljktkblpfl7sur2'
+    '_csrf' => '1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'lastPage' => -1
+    ]
+    'lastPage' => '/day'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=r9mrd4o1qutljktkblpfl7sur2; _csrf=1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_PURPOSE' => 'prefetch'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '22253'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/day'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573500324.2316
+    'REQUEST_TIME' => 1573500324
+]
+2019-11-11 19:27:26 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: isBlocking in /data/mysite.local/app/views/day/show.php:11
+Stack trace:
+#0 /data/mysite.local/app/views/day/show.php(11): yii\base\ErrorHandler->handleError(8, 'Undefined index...', '/data/mysite.lo...', 11, Array)
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(348): require('/data/mysite.lo...')
+#2 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/data/mysite.lo...', Array)
+#3 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/data/mysite.lo...', Array, Object(app\controllers\DayController))
+#4 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('show', Array, Object(app\controllers\DayController))
+#5 /data/mysite.local/app/controllers/actions/day/ShowAction.php(28): yii\base\Controller->render('show', Array)
+#6 [internal function]: app\controllers\actions\day\ShowAction->run()
+#7 /data/mysite.local/app/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#8 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#9 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('show', Array)
+#10 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('day/show', Array)
+#11 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2019-11-11 19:27:26 [10.0.2.2][-][r9mrd4o1qutljktkblpfl7sur2][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'r9mrd4o1qutljktkblpfl7sur2'
+    '_csrf' => '1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'lastPage' => 1
+    ]
+    'lastPage' => '/day/show'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=r9mrd4o1qutljktkblpfl7sur2; _csrf=1f490557739c34a1f1f7fa01e6488be32993ca9a825f0d4328fee4fe5a021dcca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ux7lvj2U-d89pa1TfR47WIM0e-nOj1p4%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '22351'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/day/show'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573500445.8358
+    'REQUEST_TIME' => 1573500445
+]
+2019-11-13 07:05:24 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: day/... in /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php:128
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('...', Array)
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('day/...', Array)
+#2 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2019-11-13 07:05:24 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'vrgd7ckkfaa692vkao8b1266fn'
+    '_csrf' => 'f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ValgylBbuS1nDpnxhknLs_a08MKqnMcb\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'lastPage' => -1
+    ]
+    'lastPage' => '/day/...'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=vrgd7ckkfaa692vkao8b1266fn; _csrf=f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ValgylBbuS1nDpnxhknLs_a08MKqnMcb%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/day/show'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_PURPOSE' => 'prefetch'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '26386'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/day/...'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573628724.8596
+    'REQUEST_TIME' => 1573628724
+]
+2019-11-13 07:05:25 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: day/... in /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php:128
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('...', Array)
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('day/...', Array)
+#2 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2019-11-13 07:05:25 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'vrgd7ckkfaa692vkao8b1266fn'
+    '_csrf' => 'f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ValgylBbuS1nDpnxhknLs_a08MKqnMcb\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'lastPage' => -1
+    ]
+    'lastPage' => '/day/...'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=vrgd7ckkfaa692vkao8b1266fn; _csrf=f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ValgylBbuS1nDpnxhknLs_a08MKqnMcb%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/day/show'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '26386'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/day/...'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573628725.8016
+    'REQUEST_TIME' => 1573628725
+]
+2019-11-13 07:06:54 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "day/files/1573483416_7.jpg". in /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('day/files/15734...', Array)
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2019-11-13 07:06:54 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'vrgd7ckkfaa692vkao8b1266fn'
+    '_csrf' => 'f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ValgylBbuS1nDpnxhknLs_a08MKqnMcb\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'lastPage' => -1
+    ]
+    'lastPage' => '/day/files/1573483416_7.jpg'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=vrgd7ckkfaa692vkao8b1266fn; _csrf=f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ValgylBbuS1nDpnxhknLs_a08MKqnMcb%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/day/show'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '26411'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/day/files/1573483416_7.jpg'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573628814.0499
+    'REQUEST_TIME' => 1573628814
+]
+2019-11-13 07:07:41 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "day/@webroot/files/1573483416_7.jpg". in /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('day/@webroot/fi...', Array)
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2019-11-13 07:07:41 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'vrgd7ckkfaa692vkao8b1266fn'
+    '_csrf' => 'f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ValgylBbuS1nDpnxhknLs_a08MKqnMcb\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'lastPage' => -1
+    ]
+    'lastPage' => '/day/@webroot/files/1573483416_7.jpg'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=vrgd7ckkfaa692vkao8b1266fn; _csrf=f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ValgylBbuS1nDpnxhknLs_a08MKqnMcb%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/day/show'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '26444'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/day/@webroot/files/1573483416_7.jpg'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573628861.0117
+    'REQUEST_TIME' => 1573628861
+]
+2019-11-13 07:09:13 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "day/@webroot/files/1573483416_7.jpg"". in /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('day/@webroot/fi...', Array)
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2019-11-13 07:09:13 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'vrgd7ckkfaa692vkao8b1266fn'
+    '_csrf' => 'f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ValgylBbuS1nDpnxhknLs_a08MKqnMcb\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'lastPage' => -1
+    ]
+    'lastPage' => '/day/@webroot/files/1573483416_7.jpg%22'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=vrgd7ckkfaa692vkao8b1266fn; _csrf=f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ValgylBbuS1nDpnxhknLs_a08MKqnMcb%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/day/show'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '26501'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/day/@webroot/files/1573483416_7.jpg%22'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573628953.5863
+    'REQUEST_TIME' => 1573628953
+]
+2019-11-13 07:12:13 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][error][Error] Error: Class 'Html' not found in /data/mysite.local/app/views/day/show.php:11
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(348): require()
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/data/mysite.lo...', Array)
+#2 /data/mysite.local/app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/data/mysite.lo...', Array, Object(app\controllers\DayController))
+#3 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('show', Array, Object(app\controllers\DayController))
+#4 /data/mysite.local/app/controllers/actions/day/ShowAction.php(28): yii\base\Controller->render('show', Array)
+#5 [internal function]: app\controllers\actions\day\ShowAction->run()
+#6 /data/mysite.local/app/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#7 /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#8 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('show', Array)
+#9 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('day/show', Array)
+#10 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#12 {main}
+2019-11-13 07:12:12 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'vrgd7ckkfaa692vkao8b1266fn'
+    '_csrf' => 'f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ValgylBbuS1nDpnxhknLs_a08MKqnMcb\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'lastPage' => 1
+    ]
+    'lastPage' => '/day/@webroot/files/1573483416_7.jpg%22'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=vrgd7ckkfaa692vkao8b1266fn; _csrf=f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ValgylBbuS1nDpnxhknLs_a08MKqnMcb%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '26684'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/day/show'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573629132.3558
+    'REQUEST_TIME' => 1573629132
+]
+2019-11-13 07:12:45 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: day/<img in /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php:128
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<img', Array)
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('day/<img', Array)
+#2 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2019-11-13 07:12:44 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'vrgd7ckkfaa692vkao8b1266fn'
+    '_csrf' => 'f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ValgylBbuS1nDpnxhknLs_a08MKqnMcb\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'lastPage' => -1
+    ]
+    'lastPage' => '/day/%3Cimg'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=vrgd7ckkfaa692vkao8b1266fn; _csrf=f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ValgylBbuS1nDpnxhknLs_a08MKqnMcb%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/day/show'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '26711'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/day/%3Cimg'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573629164.954
+    'REQUEST_TIME' => 1573629164
+]
+2019-11-13 07:13:36 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: day/<img in /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php:128
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<img', Array)
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('day/<img', Array)
+#2 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2019-11-13 07:13:36 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'vrgd7ckkfaa692vkao8b1266fn'
+    '_csrf' => 'f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ValgylBbuS1nDpnxhknLs_a08MKqnMcb\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'lastPage' => -1
+    ]
+    'lastPage' => '/day/%3Cimg'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=vrgd7ckkfaa692vkao8b1266fn; _csrf=f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ValgylBbuS1nDpnxhknLs_a08MKqnMcb%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/day/show'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '26755'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/day/%3Cimg'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573629216.7977
+    'REQUEST_TIME' => 1573629216
+]
+2019-11-13 07:14:42 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: day/<img in /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php:128
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<img', Array)
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('day/<img', Array)
+#2 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2019-11-13 07:14:42 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'vrgd7ckkfaa692vkao8b1266fn'
+    '_csrf' => 'f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ValgylBbuS1nDpnxhknLs_a08MKqnMcb\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'lastPage' => -1
+    ]
+    'lastPage' => '/day/%3Cimg'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=vrgd7ckkfaa692vkao8b1266fn; _csrf=f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ValgylBbuS1nDpnxhknLs_a08MKqnMcb%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/day/show'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '26798'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/day/%3Cimg'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573629282.3926
+    'REQUEST_TIME' => 1573629282
+]
+2019-11-13 07:15:13 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: day/<img src= in /data/mysite.local/app/vendor/yiisoft/yii2/base/Controller.php:128
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('<img src=', Array)
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('day/<img src=', Array)
+#2 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2019-11-13 07:15:12 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'vrgd7ckkfaa692vkao8b1266fn'
+    '_csrf' => 'f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ValgylBbuS1nDpnxhknLs_a08MKqnMcb\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'lastPage' => -1
+    ]
+    'lastPage' => '/day/%3Cimg%20src='
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=vrgd7ckkfaa692vkao8b1266fn; _csrf=f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ValgylBbuS1nDpnxhknLs_a08MKqnMcb%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/day/show'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '26824'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/day/%3Cimg%20src='
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573629312.9536
+    'REQUEST_TIME' => 1573629312
+]
+2019-11-13 07:19:19 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "data/mysite.local/app/web/files/1573483416_7.jpg". in /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('data/mysite.loc...', Array)
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2019-11-13 07:19:19 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'vrgd7ckkfaa692vkao8b1266fn'
+    '_csrf' => 'f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ValgylBbuS1nDpnxhknLs_a08MKqnMcb\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'lastPage' => -1
+    ]
+    'lastPage' => '/data/mysite.local/app/web/files/1573483416_7.jpg'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=vrgd7ckkfaa692vkao8b1266fn; _csrf=f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ValgylBbuS1nDpnxhknLs_a08MKqnMcb%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/day/show'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '27013'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/data/mysite.local/app/web/files/1573483416_7.jpg'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573629559.8469
+    'REQUEST_TIME' => 1573629559
+]
+2019-11-13 07:21:13 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "day/files/1573483416_7.jpg". in /data/mysite.local/app/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('day/files/15734...', Array)
+#1 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /data/mysite.local/app/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /data/mysite.local/app/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /data/mysite.local/app/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2019-11-13 07:21:13 [10.0.2.2][-][vrgd7ckkfaa692vkao8b1266fn][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-47ad51c1' => '6d80b5c0-824d-48a5-988d-3a6afbcd7341'
+    'PHPSESSID' => 'vrgd7ckkfaa692vkao8b1266fn'
+    '_csrf' => 'f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ValgylBbuS1nDpnxhknLs_a08MKqnMcb\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'lastPage' => -1
+    ]
+    'lastPage' => '/day/files/1573483416_7.jpg'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'HTTP_COOKIE' => 'Phpstorm-47ad51c1=6d80b5c0-824d-48a5-988d-3a6afbcd7341; PHPSESSID=vrgd7ckkfaa692vkao8b1266fn; _csrf=f6c3bc86db73ca01eab362c1bfa0b6d7de30a0994385c97e96c3f0450551f3cba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ValgylBbuS1nDpnxhknLs_a08MKqnMcb%22%3B%7D'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/day/show'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'REDIRECT_STATUS' => '200'
+    'SERVER_NAME' => '_'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '10.0.2.15'
+    'REMOTE_PORT' => '27087'
+    'REMOTE_ADDR' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'nginx/1.16.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REQUEST_SCHEME' => 'http'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'DOCUMENT_ROOT' => '/data/mysite.local/app/web'
+    'DOCUMENT_URI' => '/index.php'
+    'REQUEST_URI' => '/day/files/1573483416_7.jpg'
+    'SCRIPT_NAME' => '/index.php'
+    'CONTENT_LENGTH' => ''
+    'CONTENT_TYPE' => ''
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'SCRIPT_FILENAME' => '/data/mysite.local/app/web/index.php'
+    'PATH_INFO' => ''
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1573629673.3677
+    'REQUEST_TIME' => 1573629673
+]

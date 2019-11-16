@@ -28,8 +28,8 @@ class Day extends BaseModel
         $this->isDayOff = false;
 
         $this->activities[] = [
-            'title' => 'Купить книгу',
-            'description' => 'Надо пойти в книжный магазин, чтобы купить книгу',
+            'title' => 'Купить фен',
+            'description' => 'Надо пойти в магазин, чтобы купить фен',
             'startTime' => date('H:i'),
             'endTime' => date('H:i'),
             'isBlocking' => true,
