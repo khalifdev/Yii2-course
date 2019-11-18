@@ -29,10 +29,11 @@ class CreateAction extends BaseAction
             // вызываем метод добавления активности
             if(!\Yii::$app->activity->addActivity($model)) {
                 print_r($model->getErrors());
+
             }
             // результат в случае успеха
             else {
-                return $this->controller->render('create',['model'=>$model]);
+                return $this->controller->render('test',['model'=>$model]);
             }
         }
 

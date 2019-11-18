@@ -12,16 +12,16 @@ class Activity extends BaseModel
 
     public $description;
 
-    public $date;
+//    public $date;
 
-    public $startTime;
+    public $startDateTime;
 
-    public $endTime;
+    public $endDateTime;
 
-    public $isBlocking;
+    public $isBlocked;
 
-    public $isRepeated;
-    public $repeatType;
+//    public $isRepeated;
+//    public $repeatType;
 
     const DAY = 0;
     const WEEK = 1;
@@ -39,10 +39,16 @@ class Activity extends BaseModel
 
     public function beforeValidate()
     {
-        if (!empty($this->date)) {
-            $date = \DateTime::createFromFormat('d.m.Y', $this->date);
+        if (!empty($this->startDateTime)) {
+            $date = \DateTime::createFromFormat('d-m-Y H:i', $this->startDateTime);
             if ($date) {
-                $this->date = $date->format('Y-m-d');
+                $this->startDateTime = $date->format('Y-m-d H:i');
+            }
+        }
+        if (!empty($this->endDateTime)) {
+            $date = \DateTime::createFromFormat('d-m-Y H:i', $this->endDateTime);
+            if ($date) {
+                $this->endDateTime = $date->format('Y-m-d H:i');
             }
         }
         return parent::beforeValidate();
@@ -52,12 +58,12 @@ class Activity extends BaseModel
     {
         return [
             ['title', 'trim'],
-            [['title', 'description', 'date'], 'required'],
-            [['title', 'date', 'startTime', 'endTime'], 'string'],
-            ['date', 'date', 'format' => 'php:Y-m-d'],
+            [['title', 'description', 'startDateTime'], 'required'],
+            [['title', 'startDateTime', 'endDateTime'], 'string'],
+            [['startDateTime', 'endDateTime'], 'date', 'format' => 'php:Y-m-d H:i'],
             ['description','string','max' => 300, 'min'=>1],
-            [['isBlocking','isRepeated', 'useNotification'], 'boolean'],
-            ['repeatType', 'in', 'range' => array_keys(self::REPEAT_TYPE)],
+            [['isBlocked', 'useNotification'], 'boolean'],
+//            ['repeatType', 'in', 'range' => array_keys(self::REPEAT_TYPE)],
             ['email', 'email'],
             [['email', 'repeatEmail'], 'required', 'when' => function ($model) {
                 return $model->useNotification;
@@ -72,12 +78,11 @@ class Activity extends BaseModel
         return [
             'title'=>'Заголовок активности',
             'description'=>'Описание',
-            'date'=>'Дата',
-            'startTime'=>'Время начала',
-            'endTime'=>'Время окончания',
-            'isBlocking'=>'Блокирующее событие',
-            'isRepeated'=>'Повторяющееся',
-            'repeatType'=>'Частота повторения',
+            'startDateTime'=>'Время начала',
+            'endDateTime'=>'Время окончания',
+            'isBlocked'=>'Блокирующая активность',
+//            'isRepeated'=>'Повторяющееся',
+//            'repeatType'=>'Частота повторения',
             'email'=>'Ваш E-mail',
             'repeatEmail'=>'Подтвердите E-mail',
             'useNotification'=>'Оповещать',
