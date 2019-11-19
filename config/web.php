@@ -15,6 +15,7 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'dao'=>['class'=>\app\components\DAOComponent::class],
         'file'=>['class'=>\app\components\FileComponent::class ],
         'activity'=>['class'=>\app\components\ActivityComponent::class ,'modelClass' => \app\models\Activity::class],
         'day'=>['class'=>\app\components\DayComponent::class ,'modelClass' => \app\models\Day::class],

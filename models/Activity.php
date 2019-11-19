@@ -36,6 +36,8 @@ class Activity extends BaseModel
 
     public $files;
 
+    public $ind;
+
 
     public function beforeValidate()
     {

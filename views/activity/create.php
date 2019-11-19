@@ -7,28 +7,13 @@ use kartik\datetime\DateTimePicker;
  * @var $model \app\models\Activity
  */
 ?>
+<h6><?= ($model->ind) ? 'ok':'no' ?></h6>
 <h1>Новая активность</h1>
 <div class="row">
     <div class="col-md-6">
         <?php $form = ActiveForm::begin();?>
             <?=$form->field($model,'title');?>
             <?=$form->field($model,'description')->textarea();?>
-<!--            --><?php//= $form->field($model, 'startTime')->input('time'); ?>
-<!--            --><?php//= $form->field($model, 'endTime')->input('time'); ?>
-
-
-
-<!--        --><?php //echo '<label>Start Date/Time</label>';
-//        echo DateTimePicker::widget([
-//        'name' => 'datetime_10',
-//        'options' => ['placeholder' => 'Select operating time ...'],
-//        'convertFormat' => true,
-//        'pluginOptions' => [
-//        'format' => 'd-M-yyyy H:i',
-//        'startDate' => '01-Mar-2014 12:00 AM',
-//        'todayHighlight' => true
-//        ]
-//        ]);?>
 
         <?= $form->field($model, 'startDateTime')->widget(DateTimePicker::class, [
             'name' => 'startDateTime',

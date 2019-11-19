@@ -33,7 +33,7 @@ class CreateAction extends BaseAction
             }
             // результат в случае успеха
             else {
-                return $this->controller->render('test',['model'=>$model]);
+                return $this->controller->render('create', ['model' => $model]);
             }
         }
 

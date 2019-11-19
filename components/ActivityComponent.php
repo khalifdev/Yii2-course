@@ -5,7 +5,6 @@ namespace app\components;
 
 use app\base\BaseComponent;
 use app\models\Activity;
-use yii\helpers\FileHelper;
 use yii\web\UploadedFile;
 
 class ActivityComponent extends BaseComponent
@@ -30,8 +29,10 @@ class ActivityComponent extends BaseComponent
                     return false;
                 }
             }
-            return true;
-
+            if (\Yii::$app->dao->insertActivity($activity)) {
+                return true;
+            }
+            return false;
         }
         // если валидация формы не прошла
         return false;
