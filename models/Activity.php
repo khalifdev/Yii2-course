@@ -60,7 +60,7 @@ class Activity extends BaseModel
     {
         return [
             ['title', 'trim'],
-            [['title', 'description', 'startDateTime'], 'required'],
+            [['title', 'description', 'startDateTime', 'endDateTime'], 'required'],
             [['title', 'startDateTime', 'endDateTime'], 'string'],
             [['startDateTime', 'endDateTime'], 'date', 'format' => 'php:Y-m-d H:i'],
             ['description','string','max' => 300, 'min'=>1],
