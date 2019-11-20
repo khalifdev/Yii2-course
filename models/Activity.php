@@ -14,29 +14,74 @@ class Activity extends BaseModel
 
     public $date;
 
-    public $isBlocked;
+    public $startTime;
 
-    public $isRepeat;
+    public $endTime;
 
-//    public $errors;
+    public $isBlocking;
+
+    public $isRepeated;
+    public $repeatType;
+
+    const DAY = 0;
+    const WEEK = 1;
+    const MONTH = 2;
+    const REPEAT_TYPE = [self::DAY => 'Каждый день', self::WEEK => 'Каждую неделю',
+        self::MONTH => 'Каждый месяц'];
+
+    public $useNotification;
+
+    public $email;
+    public $repeatEmail;
+
+    public $files;
+
+
+    public function beforeValidate()
+    {
+        if (!empty($this->date)) {
+            $date = \DateTime::createFromFormat('d.m.Y', $this->date);
+            if ($date) {
+                $this->date = $date->format('Y-m-d');
+            }
+        }
+        return parent::beforeValidate();
+    }
 
     public function rules()
     {
         return [
-            ['title','required'],
-            ['description','string','max' => 250],
-            ['date','string'],
-            [['isBlocked','isRepeat'],'boolean']
+            ['title', 'trim'],
+            [['title', 'description', 'date'], 'required'],
+            [['title', 'date', 'startTime', 'endTime'], 'string'],
+            ['date', 'date', 'format' => 'php:Y-m-d'],
+            ['description','string','max' => 300, 'min'=>1],
+            [['isBlocking','isRepeated', 'useNotification'], 'boolean'],
+            ['repeatType', 'in', 'range' => array_keys(self::REPEAT_TYPE)],
+            ['email', 'email'],
+            [['email', 'repeatEmail'], 'required', 'when' => function ($model) {
+                return $model->useNotification;
+            }],
+            ['repeatEmail', 'compare', 'compareAttribute' => 'email'],
+            [['files'], 'file', 'extensions' => ['jpg', 'png'], 'maxFiles' => 4]
         ];
     }
 
     public function attributeLabels()
     {
         return [
-            'title'=>'Заголовок события',
+            'title'=>'Заголовок активности',
             'description'=>'Описание',
             'date'=>'Дата',
-            'isBlocked'=>'Блокирующее событие'
+            'startTime'=>'Время начала',
+            'endTime'=>'Время окончания',
+            'isBlocking'=>'Блокирующее событие',
+            'isRepeated'=>'Повторяющееся',
+            'repeatType'=>'Частота повторения',
+            'email'=>'Ваш E-mail',
+            'repeatEmail'=>'Подтвердите E-mail',
+            'useNotification'=>'Оповещать',
+            'files'=>'Файлы'
         ];
     }
 
