@@ -23,7 +23,7 @@ class DAOComponent extends BaseComponent
             ->insert('activity',[
                 'title'=>$activity->title,
                 'description'=>$activity->description,
-//                'files'=>json_encode($activity->files),
+                'files'=>(!empty($activity->files)) ? json_encode($activity->files) : NULL,
                 'startDateTime'=>$activity->startDateTime,
                 'endDateTime'=>$activity->endDateTime,
                 'isBlocked'=>$activity->isBlocked,

@@ -23,7 +23,6 @@ class ActivityComponent extends BaseComponent
 
             // проверка наличия и сохранение файлов
             if ($activity->files) {
-                $activity->files = UploadedFile::getInstances($activity, 'files');
                 $activity->files = \Yii::$app->file->saveFiles($activity->files);
                 if (!$activity->files) {
                     return false;

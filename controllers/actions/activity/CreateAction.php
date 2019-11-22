@@ -7,6 +7,7 @@ namespace app\controllers\actions\activity;
 use app\base\BaseAction;
 use yii\bootstrap\ActiveForm;
 use yii\web\Response;
+use yii\web\UploadedFile;
 
 class CreateAction extends BaseAction
 {
@@ -19,6 +20,7 @@ class CreateAction extends BaseAction
         if (\Yii::$app->request->isPost) {
             // загружаем данные формы в модель
             $model->load(\Yii::$app->request->post());
+            $model->files = UploadedFile::getInstances($model, 'files');
 
             // если запрос асинхронный, возвращаем отвалидированную форму
             if(\Yii::$app->request->isAjax){
