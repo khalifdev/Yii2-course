@@ -33,6 +33,4 @@ tests/_support/_generated
 /.vagrant
 /web/files/
 /vendor/
-/runtime/logs/
 /runtime/
-vendor/
