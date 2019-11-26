@@ -15,6 +15,7 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'rbac'=>['class'=>\app\components\RbacComponent::class],
         'auth'=>['class'=>\app\components\AuthComponent::class],
         'dao'=>['class'=>\app\components\DAOComponent::class],
         'file'=>['class'=>\app\components\FileComponent::class ],
@@ -52,6 +53,9 @@ $config = [
         ],
         'db' => $db,
 
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager'
+        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,

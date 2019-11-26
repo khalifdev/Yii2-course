@@ -27,6 +27,7 @@ class ActivityComponent extends BaseComponent
                 if (!$activity->files) {
                     return false;
                 }
+                $activity->files = json_encode($activity->files);
             }
             if (\Yii::$app->dao->insertActivity($activity)) {
                 return true;
