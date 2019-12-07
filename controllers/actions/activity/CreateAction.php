@@ -15,7 +15,7 @@ class CreateAction extends BaseAction
     public function run()
     {
         if(!\Yii::$app->rbac->canCreateActivity()){
-            throw new HttpException(403,'Not Auth Action');
+            throw new HttpException(403,'Пожалуйста, авторизуйтесь!');
         }
 
         // получаем экземпляр модели активности

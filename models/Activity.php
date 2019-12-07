@@ -36,8 +36,6 @@ class Activity extends ActivityBase
 
 //    public $files;
 
-    public $ind;
-
 
     public function beforeValidate()
     {

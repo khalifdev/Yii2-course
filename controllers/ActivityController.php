@@ -18,9 +18,4 @@ class ActivityController extends BaseController
             'view'=>['class'=>ViewAction::class]
         ];
     }
-
-//    public function actionCreate()
-//    {
-//        return $this->render('create');
-//    }
 }

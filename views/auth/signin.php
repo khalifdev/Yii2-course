@@ -7,7 +7,8 @@
         <?=$form->field($model,'email');?>
         <?=$form->field($model,'password')->passwordInput()?>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Авторизация</button>
+            <button type="submit" class="btn btn-primary">Войти</button>
+            <a class="btn btn-info" href="/auth/sign-up">Регистрация</a>
         </div>
         <?php $form::end(); ?>
     </div>
