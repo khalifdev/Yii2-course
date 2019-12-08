@@ -8,17 +8,6 @@ use app\base\BaseModel;
 
 class Activity extends ActivityBase
 {
-//    public $title;
-
-//    public $description;
-
-//    public $date;
-
-//    public $startDateTime;
-
-//    public $endDateTime;
-
-//    public $isBlocked;
 
 //    public $isRepeated;
 //    public $repeatType;
@@ -29,12 +18,9 @@ class Activity extends ActivityBase
     const REPEAT_TYPE = [self::DAY => 'Каждый день', self::WEEK => 'Каждую неделю',
         self::MONTH => 'Каждый месяц'];
 
-    public $useNotification;
+//    public $useNotification;
 
-//    public $email;
-    public $repeatEmail;
-
-//    public $files;
+//    public $repeatEmail;
 
 
     public function beforeValidate()
@@ -58,17 +44,16 @@ class Activity extends ActivityBase
     {
         return array_merge([
             ['title', 'trim'],
-            [['title', 'description', 'startDateTime', 'endDateTime'], 'required'],
-            [['title', 'startDateTime', 'endDateTime'], 'string'],
+            [['startDateTime', 'endDateTime'], 'string'],
             [['startDateTime', 'endDateTime'], 'date', 'format' => 'php:Y-m-d H:i'],
             ['description','string','max' => 300, 'min'=>1],
-            [['isBlocked', 'useNotification'], 'boolean'],
+            ['isBlocked', 'boolean'],
 //            ['repeatType', 'in', 'range' => array_keys(self::REPEAT_TYPE)],
             ['email', 'email'],
-            [['email', 'repeatEmail'], 'required', 'when' => function ($model) {
-                return $model->useNotification;
-            }],
-            ['repeatEmail', 'compare', 'compareAttribute' => 'email'],
+//            [['email', 'repeatEmail'], 'required', 'when' => function ($model) {
+//                return $model->useNotification;
+//            }],
+//            ['repeatEmail', 'compare', 'compareAttribute' => 'email'],
             [['files'], 'file', 'extensions' => ['jpg', 'png'], 'maxFiles' => 4]
         ],parent::rules());
     }
@@ -83,9 +68,9 @@ class Activity extends ActivityBase
             'isBlocked'=>'Блокирующая активность',
 //            'isRepeated'=>'Повторяющееся',
 //            'repeatType'=>'Частота повторения',
-            'email'=>'Ваш E-mail',
-            'repeatEmail'=>'Подтвердите E-mail',
-            'useNotification'=>'Оповещать',
+//            'email'=>'Ваш E-mail',
+//            'repeatEmail'=>'Подтвердите E-mail',
+//            'useNotification'=>'Оповещать',
             'files'=>'Файлы'
         ];
     }
