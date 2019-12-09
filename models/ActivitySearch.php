@@ -42,6 +42,13 @@ class ActivitySearch extends Activity
     {
         $query = Activity::find();
 
+        // проверка на админа
+        if(!\Yii::$app->rbac->canAdminActivity()){
+            $query->andWhere([
+                'userId' => \Yii::$app->user->getIdentity()->id
+            ]);
+        }
+
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([

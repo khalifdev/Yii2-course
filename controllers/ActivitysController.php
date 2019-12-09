@@ -8,6 +8,7 @@ use app\models\Activity;
 use app\models\ActivitySearch;
 use app\base\BaseController;
 use yii\base\Exception;
+use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
@@ -55,8 +56,15 @@ class ActivitysController extends BaseController
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id);
+
+        // проверка прав пользователя
+        if(!Yii::$app->rbac->canViewActivity($model)){
+            throw new HttpException(403,'Доступ запрещён!');
+        }
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
         ]);
     }
 
@@ -106,6 +114,11 @@ class ActivitysController extends BaseController
     {
         $model = $this->findModel($id);
 
+        // проверка прав пользователя
+        if(!Yii::$app->rbac->canViewActivity($model)){
+            throw new HttpException(403,'Доступ запрещён!');
+        }
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
@@ -124,7 +137,14 @@ class ActivitysController extends BaseController
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+
+        // проверка прав пользователя
+        if(!Yii::$app->rbac->canViewActivity($model)){
+            throw new HttpException(403,'Доступ запрещён!');
+        }
+
+        $model->delete();
 
         return $this->redirect(['index']);
     }
