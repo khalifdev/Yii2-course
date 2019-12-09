@@ -5,6 +5,7 @@ namespace app\models;
 
 
 use app\base\BaseModel;
+use app\behaviors\DateTimeBehavior;
 
 class Activity extends ActivityBase
 {
@@ -23,22 +24,30 @@ class Activity extends ActivityBase
 //    public $repeatEmail;
 
 
-    public function beforeValidate()
+    public function behaviors()
     {
-        if (!empty($this->startDateTime)) {
-            $date = \DateTime::createFromFormat('d-m-Y H:i', $this->startDateTime);
-            if ($date) {
-                $this->startDateTime = $date->format('Y-m-d H:i');
-            }
-        }
-        if (!empty($this->endDateTime)) {
-            $date = \DateTime::createFromFormat('d-m-Y H:i', $this->endDateTime);
-            if ($date) {
-                $this->endDateTime = $date->format('Y-m-d H:i');
-            }
-        }
-        return parent::beforeValidate();
+        return [
+            ['class'=>DateTimeBehavior::class,'dateTime' => 'startDateTime'],
+            ['class'=>DateTimeBehavior::class,'dateTime' => 'endDateTime'],
+        ];
     }
+
+//    public function beforeValidate()
+//    {
+//        if (!empty($this->startDateTime)) {
+//            $date = \DateTime::createFromFormat('d-m-Y H:i', $this->startDateTime);
+//            if ($date) {
+//                $this->startDateTime = $date->format('Y-m-d H:i');
+//            }
+//        }
+//        if (!empty($this->endDateTime)) {
+//            $date = \DateTime::createFromFormat('d-m-Y H:i', $this->endDateTime);
+//            if ($date) {
+//                $this->endDateTime = $date->format('Y-m-d H:i');
+//            }
+//        }
+//        return parent::beforeValidate();
+//    }
 
     public function rules()
     {
