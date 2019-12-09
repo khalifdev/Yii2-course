@@ -15,6 +15,8 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'rbac'=>['class'=>\app\components\RbacComponent::class],
+        'auth'=>['class'=>\app\components\AuthComponent::class],
         'dao'=>['class'=>\app\components\DAOComponent::class],
         'file'=>['class'=>\app\components\FileComponent::class ],
         'activity'=>['class'=>\app\components\ActivityComponent::class ,'modelClass' => \app\models\Activity::class],
@@ -27,7 +29,7 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\Users',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
@@ -51,6 +53,9 @@ $config = [
         ],
         'db' => $db,
 
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager'
+        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
@@ -75,7 +80,7 @@ if (YII_ENV_DEV) {
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        //'allowedIPs' => ['127.0.0.1', '::1'],
+        'allowedIPs' => ['*'],
     ];
 }
 

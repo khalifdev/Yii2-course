@@ -6,19 +6,19 @@ namespace app\models;
 
 use app\base\BaseModel;
 
-class Activity extends BaseModel
+class Activity extends ActivityBase
 {
-    public $title;
+//    public $title;
 
-    public $description;
+//    public $description;
 
 //    public $date;
 
-    public $startDateTime;
+//    public $startDateTime;
 
-    public $endDateTime;
+//    public $endDateTime;
 
-    public $isBlocked;
+//    public $isBlocked;
 
 //    public $isRepeated;
 //    public $repeatType;
@@ -31,10 +31,10 @@ class Activity extends BaseModel
 
     public $useNotification;
 
-    public $email;
+//    public $email;
     public $repeatEmail;
 
-    public $files;
+//    public $files;
 
     public $ind;
 
@@ -58,7 +58,7 @@ class Activity extends BaseModel
 
     public function rules()
     {
-        return [
+        return array_merge([
             ['title', 'trim'],
             [['title', 'description', 'startDateTime', 'endDateTime'], 'required'],
             [['title', 'startDateTime', 'endDateTime'], 'string'],
@@ -72,7 +72,7 @@ class Activity extends BaseModel
             }],
             ['repeatEmail', 'compare', 'compareAttribute' => 'email'],
             [['files'], 'file', 'extensions' => ['jpg', 'png'], 'maxFiles' => 4]
-        ];
+        ],parent::rules());
     }
 
     public function attributeLabels()
