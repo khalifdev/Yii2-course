@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\ActivitySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Activities';
+$this->title = 'Активности';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="activity-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Activity', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -26,17 +26,21 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'title',
             'description:ntext',
-            'files',
+            //'files',
             'startDateTime',
-            //'endDateTime',
+            'endDateTime',
             //'isBlocked',
             //'email:email',
             //'createdAt',
             //'updatedAt',
             //'userId',
+            [
+                'attribute' => 'user.email',
+                'label' => 'Пользователь'
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

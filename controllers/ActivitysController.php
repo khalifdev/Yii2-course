@@ -2,12 +2,15 @@
 
 namespace app\controllers;
 
+use app\components\ActivityFilesComponent;
 use Yii;
 use app\models\Activity;
 use app\models\ActivitySearch;
 use app\base\BaseController;
+use yii\base\Exception;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ActivitysController implements the CRUD actions for Activity model.
@@ -66,7 +69,24 @@ class ActivitysController extends BaseController
     {
         $model = new Activity();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        // если приходит заполненная форма
+        if ($model->load(Yii::$app->request->post())) {
+
+            // извлекаем пользователя
+            $model->userId=\Yii::$app->user->getIdentity()->id;
+
+            // обработка файлов
+            $model->files = UploadedFile::getInstances($model, 'files');
+            if (!ActivityFilesComponent::addFiles($model)) {
+                throw new Exception('Ошибка сохранения файлов!', 500);
+            }
+
+            // сохранение Активности
+            if (!$model->save()) {
+                throw new Exception('Ошибка добавления активности!', 500);
+            }
+
+            // редирект, если всё нормально
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

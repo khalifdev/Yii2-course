@@ -56,6 +56,8 @@ class ActivitySearch extends Activity
             return $dataProvider;
         }
 
+        $query->with('user');
+
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
