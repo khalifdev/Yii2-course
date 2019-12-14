@@ -6,6 +6,7 @@ namespace app\models;
 
 use app\base\BaseModel;
 use app\behaviors\DateTimeBehavior;
+use yii\db\ActiveRecord;
 
 class Activity extends ActivityBase
 {
@@ -27,8 +28,8 @@ class Activity extends ActivityBase
     public function behaviors()
     {
         return [
-            ['class'=>DateTimeBehavior::class,'dateTime' => 'startDateTime'],
-            ['class'=>DateTimeBehavior::class,'dateTime' => 'endDateTime'],
+            ['class'=>DateTimeBehavior::class, 'dateTime' => 'startDateTime'],
+            ['class'=>DateTimeBehavior::class, 'dateTime' => 'endDateTime'],
         ];
     }
 

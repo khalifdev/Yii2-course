@@ -91,6 +91,8 @@ class ActivitysController extends BaseController
 
             // сохранение Активности
             if (!$model->save()) {
+                print_r($model->attributes);
+                exit();
                 throw new Exception('Ошибка добавления активности!', 500);
             }
 

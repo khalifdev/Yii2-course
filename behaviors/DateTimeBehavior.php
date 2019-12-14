@@ -10,16 +10,19 @@ use yii\db\ActiveRecord;
 class DateTimeBehavior extends Behavior
 {
     public $dateTime;
+    public $format = 'd.m.Y hh:ii';
 
     public function events()
     {
-        return [ActiveRecord::EVENT_BEFORE_VALIDATE => 'dateTimeFormat'];
+        return [ActiveRecord::EVENT_BEFORE_VALIDATE => 'convertDateToDB'];
     }
 
-    public function dateTimeFormat() {
-        $this->dateTime = \DateTime::createFromFormat('d-m-Y H:i', $this->dateTime);
-        if($this->dateTime){
-            return $this->owner->{$this->dateTime->format('Y-m-d H:i')};
+    public function convertDateToDB() {
+        $dt = \DateTime::createFromFormat($this->format, $this->owner->{$this->dateTime});
+        if($dt){
+//            print_r($dateTime);
+//            exit();
+            $this->owner->{$this->dateTime} =  $dt->format('Y-m-d H:i');
         }
     }
 }
