@@ -20,9 +20,12 @@ class ActivityFilesComponent extends BaseComponent
                     return false;
                 }
                 $activity->files = json_encode($activity->files);
-                return true;
+
             }
-            return false;
+            else {
+                $activity->files = NULL;
+            }
+            return true;
 
     }
 

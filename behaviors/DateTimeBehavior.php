@@ -10,7 +10,7 @@ use yii\db\ActiveRecord;
 class DateTimeBehavior extends Behavior
 {
     public $dateTime;
-    public $format = 'd.m.Y hh:ii';
+    public $format = 'd.m.Y H:i';
 
     public function events()
     {
@@ -20,8 +20,6 @@ class DateTimeBehavior extends Behavior
     public function convertDateToDB() {
         $dt = \DateTime::createFromFormat($this->format, $this->owner->{$this->dateTime});
         if($dt){
-//            print_r($dateTime);
-//            exit();
             $this->owner->{$this->dateTime} =  $dt->format('Y-m-d H:i');
         }
     }

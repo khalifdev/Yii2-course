@@ -54,8 +54,9 @@ class Activity extends ActivityBase
     {
         return array_merge([
             ['title', 'trim'],
-            [['startDateTime', 'endDateTime'], 'string'],
+//            [['startDateTime', 'endDateTime'], 'string'],
             [['startDateTime', 'endDateTime'], 'date', 'format' => 'php:Y-m-d H:i'],
+            ['endDateTime', 'compare', 'compareAttribute' => 'startDateTime', 'operator'=>'>='],
             ['description','string','max' => 300, 'min'=>1],
             ['isBlocked', 'boolean'],
 //            ['repeatType', 'in', 'range' => array_keys(self::REPEAT_TYPE)],
