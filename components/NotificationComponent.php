@@ -33,6 +33,7 @@ class NotificationComponent extends Component
         foreach ($activity as $item){
             $send=$this->getMailer()->compose('notif',['model'=>$item])
                 ->setSubject('Активность '.$item->id.' стартует сегодня')
+                ->setFrom('alex.cojukhov@ya.ru')
                 ->setTo($item->email)
                 ->send();
 
