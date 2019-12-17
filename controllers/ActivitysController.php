@@ -8,9 +8,11 @@ use app\models\Activity;
 use app\models\ActivitySearch;
 use app\base\BaseController;
 use yii\base\Exception;
+use yii\bootstrap\ActiveForm;
 use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
 use yii\web\UploadedFile;
 
 /**
@@ -79,6 +81,12 @@ class ActivitysController extends BaseController
 
         // если приходит заполненная форма
         if ($model->load(Yii::$app->request->post())) {
+
+            // если запрос асинхронный, возвращаем отвалидированную форму
+            if(\Yii::$app->request->isAjax){
+                \Yii::$app->response->format=Response::FORMAT_JSON;
+                return ActiveForm::validate($model);
+            }
 
             // извлекаем пользователя
             $model->userId=\Yii::$app->user->getIdentity()->id;

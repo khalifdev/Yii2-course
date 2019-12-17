@@ -18,6 +18,7 @@ use Yii;
  * @property string $createdAt
  * @property string|null $updatedAt
  * @property int $userId
+ * @property int $useNotification
  *
  * @property Users $user
  */
@@ -40,7 +41,7 @@ class ActivityBase extends \yii\db\ActiveRecord
             [['title', 'description', 'startDateTime', 'endDateTime', 'userId'], 'required'],
             [['description'], 'string'],
             [['startDateTime', 'endDateTime', 'createdAt', 'updatedAt'], 'safe'],
-            [['isBlocked', 'userId'], 'integer'],
+            [['isBlocked', 'userId', 'useNotification'], 'integer'],
             [['title', 'email'], 'string', 'max' => 150],
             [['files'], 'string', 'max' => 600],
             [['userId'], 'exist', 'skipOnError' => true, 'targetClass' => Users::className(), 'targetAttribute' => ['userId' => 'id']],
@@ -64,6 +65,7 @@ class ActivityBase extends \yii\db\ActiveRecord
             'createdAt' => Yii::t('app', 'Created At'),
             'updatedAt' => Yii::t('app', 'Updated At'),
             'userId' => Yii::t('app', 'User ID'),
+            'useNotification' => Yii::t('app', 'Use Notification'),
         ];
     }
 

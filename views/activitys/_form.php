@@ -40,7 +40,10 @@ use kartik\datetime\DateTimePicker;
 
     <?=$form->field($model,'isBlocked')->checkbox()?>
 
-    <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+    <?=$form->field($model,'useNotification')->checkbox()?>
+
+    <?= $form->field($model, 'email',['enableClientValidation' => false, 'enableAjaxValidation' => true])
+        ->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
