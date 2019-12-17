@@ -3,6 +3,7 @@
 namespace app\models;
 
 use yii\base\Model;
+use yii\caching\DbDependency;
 use yii\data\ActiveDataProvider;
 use app\models\Activity;
 
@@ -40,7 +41,7 @@ class ActivitySearch extends Activity
      */
     public function search($params)
     {
-        $query = Activity::find();
+        $query = Activity::find()->cache(15,new DbDependency(['sql' => 'select max(id) from activity']));
 
         // проверка на админа
         if(!\Yii::$app->rbac->canAdminActivity()){
