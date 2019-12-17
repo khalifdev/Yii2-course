@@ -16,6 +16,7 @@ $config = [
         '@tests' => '@app/tests',
     ],
     'components' => [
+        'activity'=>['class'=>\app\components\ActivityComponent::class ,'modelClass' => \app\models\Activity::class],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -29,6 +30,20 @@ $config = [
                     'levels' => ['error', 'warning'],
                 ],
             ],
+        ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+
+            'useFileTransport' => false,
+            'enableSwiftMailerLogging' => true,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.yandex.ru',
+                'username' => 'alex.cojukhov@ya.ru',
+                'password' => 'vg5#6xw)9cyr',
+                'port' => '587',
+                'encryption' => 'tls'
+            ]
         ],
         'db' => $db,
     ],
