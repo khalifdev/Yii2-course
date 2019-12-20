@@ -58,9 +58,12 @@ class Activity extends ActivityBase
             [['startDateTime', 'endDateTime'], 'date', 'format' => 'php:Y-m-d H:i'],
             ['endDateTime', 'compare', 'compareAttribute' => 'startDateTime', 'operator'=>'>='],
             ['description','string','max' => 300, 'min'=>1],
-            ['isBlocked', 'boolean'],
+            [['isBlocked', 'useNotification'],'boolean'],
 //            ['repeatType', 'in', 'range' => array_keys(self::REPEAT_TYPE)],
             ['email', 'email'],
+            ['email', 'required', 'when' => function ($model) {
+                return $model->useNotification;
+            }],
 //            [['email', 'repeatEmail'], 'required', 'when' => function ($model) {
 //                return $model->useNotification;
 //            }],
@@ -79,9 +82,9 @@ class Activity extends ActivityBase
             'isBlocked'=>'Блокирующая активность',
 //            'isRepeated'=>'Повторяющееся',
 //            'repeatType'=>'Частота повторения',
-//            'email'=>'Ваш E-mail',
+            'email'=>'E-mail для оповещения',
 //            'repeatEmail'=>'Подтвердите E-mail',
-//            'useNotification'=>'Оповещать',
+            'useNotification'=>'Оповещать',
             'files'=>'Файлы'
         ];
     }
