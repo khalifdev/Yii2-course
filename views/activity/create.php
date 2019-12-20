@@ -7,7 +7,6 @@ use kartik\datetime\DateTimePicker;
  * @var $model \app\models\Activity
  */
 ?>
-<h6><?= ($model->ind) ? 'ok':'no' ?></h6>
 <h1>Новая активность</h1>
 <div class="row">
     <div class="col-md-6">

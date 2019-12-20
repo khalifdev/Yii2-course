@@ -57,6 +57,10 @@ class RbacComponent extends BaseComponent
         return \Yii::$app->user->can('createActivity');
     }
 
+    public function canAdminActivity(): bool
+    {
+        return \Yii::$app->user->can('adminActivity');
+    }
 
     public function canViewActivity(Activity $activity)
     {

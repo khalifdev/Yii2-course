@@ -5,20 +5,11 @@ namespace app\models;
 
 
 use app\base\BaseModel;
+use app\behaviors\DateTimeBehavior;
+use yii\db\ActiveRecord;
 
 class Activity extends ActivityBase
 {
-//    public $title;
-
-//    public $description;
-
-//    public $date;
-
-//    public $startDateTime;
-
-//    public $endDateTime;
-
-//    public $isBlocked;
 
 //    public $isRepeated;
 //    public $repeatType;
@@ -29,48 +20,51 @@ class Activity extends ActivityBase
     const REPEAT_TYPE = [self::DAY => 'Каждый день', self::WEEK => 'Каждую неделю',
         self::MONTH => 'Каждый месяц'];
 
-    public $useNotification;
+//    public $useNotification;
 
-//    public $email;
-    public $repeatEmail;
-
-//    public $files;
-
-    public $ind;
+//    public $repeatEmail;
 
 
-    public function beforeValidate()
+    public function behaviors()
     {
-        if (!empty($this->startDateTime)) {
-            $date = \DateTime::createFromFormat('d-m-Y H:i', $this->startDateTime);
-            if ($date) {
-                $this->startDateTime = $date->format('Y-m-d H:i');
-            }
-        }
-        if (!empty($this->endDateTime)) {
-            $date = \DateTime::createFromFormat('d-m-Y H:i', $this->endDateTime);
-            if ($date) {
-                $this->endDateTime = $date->format('Y-m-d H:i');
-            }
-        }
-        return parent::beforeValidate();
+        return [
+            ['class'=>DateTimeBehavior::class, 'dateTime' => 'startDateTime'],
+            ['class'=>DateTimeBehavior::class, 'dateTime' => 'endDateTime'],
+        ];
     }
+
+//    public function beforeValidate()
+//    {
+//        if (!empty($this->startDateTime)) {
+//            $date = \DateTime::createFromFormat('d-m-Y H:i', $this->startDateTime);
+//            if ($date) {
+//                $this->startDateTime = $date->format('Y-m-d H:i');
+//            }
+//        }
+//        if (!empty($this->endDateTime)) {
+//            $date = \DateTime::createFromFormat('d-m-Y H:i', $this->endDateTime);
+//            if ($date) {
+//                $this->endDateTime = $date->format('Y-m-d H:i');
+//            }
+//        }
+//        return parent::beforeValidate();
+//    }
 
     public function rules()
     {
         return array_merge([
             ['title', 'trim'],
-            [['title', 'description', 'startDateTime', 'endDateTime'], 'required'],
-            [['title', 'startDateTime', 'endDateTime'], 'string'],
+//            [['startDateTime', 'endDateTime'], 'string'],
             [['startDateTime', 'endDateTime'], 'date', 'format' => 'php:Y-m-d H:i'],
+            ['endDateTime', 'compare', 'compareAttribute' => 'startDateTime', 'operator'=>'>='],
             ['description','string','max' => 300, 'min'=>1],
-            [['isBlocked', 'useNotification'], 'boolean'],
+            ['isBlocked', 'boolean'],
 //            ['repeatType', 'in', 'range' => array_keys(self::REPEAT_TYPE)],
             ['email', 'email'],
-            [['email', 'repeatEmail'], 'required', 'when' => function ($model) {
-                return $model->useNotification;
-            }],
-            ['repeatEmail', 'compare', 'compareAttribute' => 'email'],
+//            [['email', 'repeatEmail'], 'required', 'when' => function ($model) {
+//                return $model->useNotification;
+//            }],
+//            ['repeatEmail', 'compare', 'compareAttribute' => 'email'],
             [['files'], 'file', 'extensions' => ['jpg', 'png'], 'maxFiles' => 4]
         ],parent::rules());
     }
@@ -85,9 +79,9 @@ class Activity extends ActivityBase
             'isBlocked'=>'Блокирующая активность',
 //            'isRepeated'=>'Повторяющееся',
 //            'repeatType'=>'Частота повторения',
-            'email'=>'Ваш E-mail',
-            'repeatEmail'=>'Подтвердите E-mail',
-            'useNotification'=>'Оповещать',
+//            'email'=>'Ваш E-mail',
+//            'repeatEmail'=>'Подтвердите E-mail',
+//            'useNotification'=>'Оповещать',
             'files'=>'Файлы'
         ];
     }

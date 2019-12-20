@@ -14,7 +14,8 @@ class BaseController extends Controller
     {
         if(\Yii::$app->user->isGuest)
         {
-            throw new HttpException(401,'Not Auth');
+            return $this->redirect('/auth/sign-in');
+//            throw new HttpException(401,'Not Auth');
         }
 
         $this->view->params['lastPage'] = \Yii::$app->session->getFlash('lastPage');
