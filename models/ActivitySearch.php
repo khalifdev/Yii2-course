@@ -41,7 +41,7 @@ class ActivitySearch extends Activity
      */
     public function search($params)
     {
-        $query = Activity::find()->cache(15,new DbDependency(['sql' => 'select max(id) from activity']));
+        $query = Activity::find();
 
         // проверка на админа
         if(!\Yii::$app->rbac->canAdminActivity()){

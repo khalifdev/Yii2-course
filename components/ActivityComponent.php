@@ -39,7 +39,7 @@ class ActivityComponent extends BaseComponent
     }
 
     public function findTodayNotifActivity(){
-        return Activity::find()->andWhere('useNotification!=0')
+        return Activity::find()->andWhere('useNotification=1')
             ->andWhere('startDateTime>=:date',[':date' => date('Y-m-d')])
             ->andWhere('startDateTime<=:date1',[':date1' => date('Y-m-d').' 23:59:59'])->all();
     }
