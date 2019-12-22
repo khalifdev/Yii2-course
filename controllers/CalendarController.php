@@ -10,7 +10,6 @@ use app\models\Calendar;
 use Yii;
 use yii\base\Exception;
 use yii\bootstrap\ActiveForm;
-use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\HttpException;
 use yii\web\NotFoundHttpException;

@@ -18,7 +18,7 @@ class SignUpAction extends BaseAction
             $model->load(\Yii::$app->request->post());
 
             if($this->controller->auth->signUp($model)) {
-                $this->controller->redirect('/auth/sign-in');
+                $this->controller->goHome();
             }
         }
 

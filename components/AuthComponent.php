@@ -38,7 +38,7 @@ class AuthComponent extends BaseComponent
         $model->passwordHash = $this->genPasswordHash($model->password);
 
         if($model->save()){
-            return true;
+            return \Yii::$app->user->login($model);
         }
         return false;
     }
