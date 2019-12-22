@@ -15,10 +15,11 @@ class SignInAction extends BaseAction
         $model = new Users();
 
         if(\Yii::$app->request->isPost){
+
             $model->load(\Yii::$app->request->post());
 
             if($this->controller->auth->signIn($model)) {
-                $this->controller->redirect('/activitys/index');
+                $this->controller->goHome();
             }
         }
 

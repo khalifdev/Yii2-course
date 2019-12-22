@@ -9,6 +9,25 @@ use app\models\Users;
 
 class AuthComponent extends BaseComponent
 {
+
+    public function signIn(Users $model) : bool
+    {
+        $model->scenarioSignIn();
+
+        if(!$model->validate(['email','password'])){
+            return false;
+        }
+
+        $user = $this->getUserByEmail($model->email);
+
+        if(!$this->validatePassword($model->password, $user->passwordHash)){
+            $model->addError('password', 'Неверный пароль');
+            return false;
+        }
+
+        return \Yii::$app->user->login($user);
+    }
+
     public function signUp(Users $model) : bool
     {
         $model->scenarioSignUp();
@@ -29,24 +48,8 @@ class AuthComponent extends BaseComponent
         return \Yii::$app->security->generatePasswordHash($password);
     }
 
-    public function signIn(Users $model) : bool
-    {
-        $model->scenarioSignIn();
-        if(!$model->validate(['email','password'])){
-            return false;
-        }
 
-        $user = $this->getUserByEmail($model->email);
-
-        if(!$this->validatePassword($model->password, $user->passwordHash)){
-            $model->addError('password', 'Неверный пароль');
-            return false;
-        }
-
-        return \Yii::$app->user->login($user);
-    }
-
-    public function getUserByEmail($email): ?Users
+    public function getUserByEmail($email): ? Users
     {
         return Users::find()->andWhere(['email'=>$email])->one();
     }

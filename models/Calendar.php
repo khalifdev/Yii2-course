@@ -3,14 +3,12 @@
 namespace app\models;
 
 use yii\base\Model;
-use yii\caching\DbDependency;
 use yii\data\ActiveDataProvider;
-use app\models\Activity;
 
 /**
- * ActivitySearch represents the model behind the search form of `app\models\Activity`.
+ * Calendar represents the model behind the search form of `app\models\Activity`.
  */
-class ActivitySearch extends Activity
+class Calendar extends Activity
 {
     /**
      * {@inheritdoc}

@@ -2,23 +2,25 @@
 
 namespace app\controllers;
 
-use app\components\ActivityFilesComponent;
-use Yii;
-use app\models\Activity;
-use app\models\ActivitySearch;
 use app\base\BaseController;
+use app\behaviors\IsGuestBehavior;
+use app\components\ActivityFilesComponent;
+use app\models\Activity;
+use app\models\Calendar;
+use Yii;
 use yii\base\Exception;
 use yii\bootstrap\ActiveForm;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 use yii\web\Response;
 use yii\web\UploadedFile;
 
 /**
- * ActivitysController implements the CRUD actions for Activity model.
+ * CalendarController implements the CRUD actions for Activity model.
  */
-class ActivitysController extends BaseController
+class CalendarController extends BaseController
 {
     /**
      * {@inheritdoc}
@@ -26,8 +28,9 @@ class ActivitysController extends BaseController
     public function behaviors()
     {
         return [
+            ['class'=>IsGuestBehavior::class],
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['POST'],
                 ],
@@ -41,7 +44,7 @@ class ActivitysController extends BaseController
      */
     public function actionIndex()
     {
-        $searchModel = new ActivitySearch();
+        $searchModel = new Calendar();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -99,8 +102,6 @@ class ActivitysController extends BaseController
 
             // сохранение Активности
             if (!$model->save()) {
-                print_r($model->attributes);
-                exit();
                 throw new Exception('Ошибка добавления активности!', 500);
             }
 
@@ -172,6 +173,6 @@ class ActivitysController extends BaseController
             return $model;
         }
 
-        throw new NotFoundHttpException('The requested page does not exist.');
+        throw new NotFoundHttpException('Запрошенная страница отсутствует.');
     }
 }

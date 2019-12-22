@@ -33,23 +33,6 @@ class Activity extends ActivityBase
         ];
     }
 
-//    public function beforeValidate()
-//    {
-//        if (!empty($this->startDateTime)) {
-//            $date = \DateTime::createFromFormat('d-m-Y H:i', $this->startDateTime);
-//            if ($date) {
-//                $this->startDateTime = $date->format('Y-m-d H:i');
-//            }
-//        }
-//        if (!empty($this->endDateTime)) {
-//            $date = \DateTime::createFromFormat('d-m-Y H:i', $this->endDateTime);
-//            if ($date) {
-//                $this->endDateTime = $date->format('Y-m-d H:i');
-//            }
-//        }
-//        return parent::beforeValidate();
-//    }
-
     public function rules()
     {
         return array_merge([
