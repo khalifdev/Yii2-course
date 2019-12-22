@@ -38,7 +38,9 @@ class AuthComponent extends BaseComponent
         $model->passwordHash = $this->genPasswordHash($model->password);
 
         if($model->save()){
-            return \Yii::$app->user->login($model);
+            \Yii::$app->user->login($model);
+            \Yii::$app->rbac->assignNewUser();
+            return true;
         }
         return false;
     }

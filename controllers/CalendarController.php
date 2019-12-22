@@ -3,13 +3,13 @@
 namespace app\controllers;
 
 use app\base\BaseController;
-use app\behaviors\IsGuestBehavior;
 use app\components\ActivityFilesComponent;
 use app\models\Activity;
 use app\models\Calendar;
 use Yii;
 use yii\base\Exception;
 use yii\bootstrap\ActiveForm;
+use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
@@ -27,7 +27,15 @@ class CalendarController extends BaseController
     public function behaviors()
     {
         return [
-            ['class'=>IsGuestBehavior::class],
+            'access' => [
+                'class' => AccessControl::class,
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin', 'user'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::class,
                 'actions' => [

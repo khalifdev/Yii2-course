@@ -3,8 +3,8 @@
 namespace app\controllers;
 
 use app\base\BaseController;
-use app\behaviors\IsGuestBehavior;
 use Yii;
+use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Response;
 
@@ -16,9 +16,8 @@ class SiteController extends BaseController
     public function behaviors()
     {
         return [
-            ['class'=>IsGuestBehavior::class],
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class' => VerbFilter::class,
                 'actions' => [
                     'logout' => ['post'],
                 ],

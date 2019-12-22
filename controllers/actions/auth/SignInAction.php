@@ -19,7 +19,7 @@ class SignInAction extends BaseAction
             $model->load(\Yii::$app->request->post());
 
             if($this->controller->auth->signIn($model)) {
-                $this->controller->goHome();
+                $this->controller->goBack();
             }
         }
 
