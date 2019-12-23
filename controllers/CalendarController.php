@@ -137,7 +137,25 @@ class CalendarController extends BaseController
             throw new HttpException(403,'Доступ запрещён!');
         }
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+
+            // если запрос асинхронный, возвращаем отвалидированную форму
+            if(\Yii::$app->request->isAjax){
+                \Yii::$app->response->format=Response::FORMAT_JSON;
+                return ActiveForm::validate($model);
+            }
+
+            // обработка файлов
+            $model->files = UploadedFile::getInstances($model, 'files');
+            if (!ActivityFilesComponent::addFiles($model)) {
+                throw new Exception('Ошибка сохранения файлов!', 500);
+            }
+
+            // сохранение Активности
+            if (!$model->save()) {
+                throw new Exception('Ошибка обновления активности!', 500);
+            }
+
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
