@@ -36,6 +36,7 @@ class DateTimeBehavior extends Behavior
 
     public function setUpdatedAt()
     {
+        date_default_timezone_set('Europe/Moscow');
         $this->owner->updatedAt = date('Y-m-d H:i');
     }
 }
