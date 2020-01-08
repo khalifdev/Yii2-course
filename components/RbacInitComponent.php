@@ -10,44 +10,53 @@ use yii\rbac\ManagerInterface;
 
 class RbacInitComponent extends BaseComponent
 {
-    private function getManager(): ManagerInterface
+    private $manager;
+
+    public function __construct($config = [])
     {
-        return \Yii::$app->authManager;
+        parent::__construct($config);
+
+        $this->manager = \Yii::$app->authManager;
     }
+
+//    private function getManager(): ManagerInterface
+//    {
+//        return \Yii::$app->authManager;
+//    }
 
     public function generateRbac()
     {
-        $manager = $this->getManager();
-        $manager->removeAll();
+//        $manager = $this->getManager();
+        $this->manager->removeAll();
 
-        $admin = $manager->createRole('admin');
-        $user = $manager->createRole('user');
+        $admin = $this->manager->createRole('admin');
+        $user = $this->manager->createRole('user');
 
-        $manager->add($admin);
-        $manager->add($user);
+        $this->manager->add($admin);
+        $this->manager->add($user);
 
         $rule=new OwnerActivityRule();
-        $manager->add($rule);
+        $this->manager->add($rule);
 
-        $createActivity = $manager->createPermission('createActivity');
+        $createActivity = $this->manager->createPermission('createActivity');
         $createActivity->description = 'Создание активностей';
-        $manager->add($createActivity);
+        $this->manager->add($createActivity);
 
-        $viewOwnerActivity = $manager->createPermission('viewOwnerActivity');
+        $viewOwnerActivity = $this->manager->createPermission('viewOwnerActivity');
         $viewOwnerActivity->description = 'Просмотр своей активности';
         $viewOwnerActivity->ruleName = $rule->name;
-        $manager->add($viewOwnerActivity);
+        $this->manager->add($viewOwnerActivity);
 
-        $adminActivity = $manager->createPermission('adminActivity');
+        $adminActivity = $this->manager->createPermission('adminActivity');
         $adminActivity->description = 'Доступ к любым активностям';
-        $manager->add($adminActivity);
+        $this->manager->add($adminActivity);
 
-        $manager->addChild($user, $createActivity);
-        $manager->addChild($user, $viewOwnerActivity);
-        $manager->addChild($admin, $user);
-        $manager->addChild($admin, $adminActivity);
+        $this->manager->addChild($user, $createActivity);
+        $this->manager->addChild($user, $viewOwnerActivity);
+        $this->manager->addChild($admin, $user);
+        $this->manager->addChild($admin, $adminActivity);
 
-        $manager->assign($user, 1);
-        $manager->assign($admin, 2);
+        $this->manager->assign($user, 1);
+        $this->manager->assign($admin, 2);
     }
 }

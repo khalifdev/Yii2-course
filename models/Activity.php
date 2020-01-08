@@ -28,15 +28,22 @@ class Activity extends ActivityBase
     public function behaviors()
     {
         return [
-            ['class'=>DateTimeBehavior::class, 'dateTime' => 'startDateTime'],
-            ['class'=>DateTimeBehavior::class, 'dateTime' => 'endDateTime'],
+            ['class'=>DateTimeBehavior::class,
+                'dateTimeFields' => [
+                    'startDateTime',
+                    'endDateTime',
+                    'createdAt',
+                    'updatedAt'
+                ]
+            ],
+//            ['class'=>DateTimeBehavior::class, 'dateTime' => 'endDateTime'],
         ];
     }
 
     public function rules()
     {
         return array_merge([
-            ['title', 'trim'],
+            [['title', 'email'],'trim'],
 //            [['startDateTime', 'endDateTime'], 'string'],
             [['startDateTime', 'endDateTime'], 'date', 'format' => 'php:Y-m-d H:i'],
             ['endDateTime', 'compare', 'compareAttribute' => 'startDateTime', 'operator'=>'>='],
@@ -44,6 +51,7 @@ class Activity extends ActivityBase
             [['isBlocked', 'useNotification'],'boolean'],
 //            ['repeatType', 'in', 'range' => array_keys(self::REPEAT_TYPE)],
             ['email', 'email'],
+            [['email', 'files'] , 'default'],
             ['email', 'required', 'when' => function ($model) {
                 return $model->useNotification;
             }],

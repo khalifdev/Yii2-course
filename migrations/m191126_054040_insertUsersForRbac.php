@@ -30,12 +30,15 @@ class m191126_054040_insertUsersForRbac extends Migration
      */
     public function safeDown()
     {
-        $this->delete('users', [
-            'id'=>1,
-        ]);
-        $this->delete('users', [
-            'id'=>2,
-        ]);
+//        $this->delete('users', [
+//            'id'=>1,
+//        ]);
+//        $this->delete('users', [
+//            'id'=>2,
+//        ]);
+
+        $this->delete('activity');
+        $this->delete('users');
     }
 
 }

@@ -9,7 +9,7 @@ use yii\db\ActiveRecord;
 
 class DateTimeBehavior extends Behavior
 {
-    public $dateTime;
+    public $dateTimeFields = [];
 
     public function events()
     {
@@ -21,17 +21,31 @@ class DateTimeBehavior extends Behavior
     }
 
     public function convertDateToDB() {
-        $dt = \DateTime::createFromFormat('d.m.Y H:i', $this->owner->{$this->dateTime});
-        if($dt){
-            $this->owner->{$this->dateTime} =  $dt->format('Y-m-d H:i');
+        foreach ($this->dateTimeFields as $dateTime){
+            if ($this->owner->{$dateTime}) {
+                $dt = \DateTime::createFromFormat('d.m.Y H:i', $this->owner->{$dateTime});
+                if($dt){
+                    $this->owner->{$dateTime} =  $dt->format('Y-m-d H:i');
+                }
+            }
         }
+
     }
 
     public function convertDateToApp() {
-        $dt = \DateTime::createFromFormat('Y-m-d H:i:s', $this->owner->{$this->dateTime});
-        if($dt){
-            $this->owner->{$this->dateTime} =  $dt->format('d.m.Y H:i');
+
+        foreach ($this->dateTimeFields as $dateTime){
+            if ($this->owner->{$dateTime}) {
+                //echo $this->owner->{$dateTime} . ' ';
+                $dt = \DateTime::createFromFormat('Y-m-d H:i:s', $this->owner->{$dateTime});
+//                print_r($dt);
+                if($dt){
+
+                    $this->owner->{$dateTime} =  $dt->format('d.m.Y H:i');
+                }
+            }
         }
+//        exit();
     }
 
     public function setUpdatedAt()

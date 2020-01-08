@@ -15,15 +15,14 @@ class ActivityFilesComponent extends BaseComponent
 
             // проверка наличия и сохранение файлов
             if ($activity->files) {
+
                 $activity->files = \Yii::$app->file->saveFiles($activity->files);
+
                 if (!$activity->files) {
                     return false;
                 }
-                $activity->files = json_encode($activity->files);
 
-            }
-            else {
-                $activity->files = NULL;
+                $activity->files = json_encode($activity->files);
             }
             return true;
 

@@ -16,11 +16,11 @@ class m191116_115648_createTableActivity extends Migration
             'id'=>$this->primaryKey(),
             'title'=>$this->string(150)->notNull(),
             'description'=>$this->text()->notNull(),
-            'files'=>$this->string(600),
+            'files'=>$this->string(600)->defaultValue('NULL'),
             'startDateTime'=>$this->dateTime()->notNull(),
             'endDateTime'=>$this->dateTime()->notNull(),
             'isBlocked'=>$this->boolean()->notNull()->defaultValue(0),
-            'email'=>$this->string('150'),
+            'email'=>$this->string(150)->defaultValue('NULL'),
             'createdAt'=>$this->timestamp()->notNull()->defaultExpression('CURRENT_TIMESTAMP'),
             'updatedAt'=>$this->dateTime(),
             'userId'=>$this->integer()->notNull()
