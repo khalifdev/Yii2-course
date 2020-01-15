@@ -26,26 +26,26 @@ class NotificationComponent extends Component
 
 
     /**
-     * @param Activity[] $activity
+     * @param Activity[] $activities
      */
-    public function sendNotifications(array $activity)
+    public function sendNotifications(array $activities)
     {
-        foreach ($activity as $item){
-            $send=$this->getMailer()->compose('notif',['model'=>$item])
-                ->setSubject('Активность '.$item->id.' стартует сегодня')
+        foreach ($activities as $activity){
+            $send=$this->getMailer()->compose('notif',['model'=>$activity])
+                ->setSubject('Активность "'.$activity->title.'" стартует сегодня')
                 ->setFrom('alex.cojukhov@ya.ru')
-                ->setTo($item->email)
+                ->setTo($activity->email)
                 ->send();
 
             if(!$send){
                 if(\Yii::$app instanceof Application){
-                    echo 'Error email send '.$item->email;
+                    echo 'Error email send '.$activity->email;
                 }
                 return false;
             }
 
             if(\Yii::$app instanceof Application){
-                echo 'Email send '.$item->email.PHP_EOL;
+                echo 'Email send '.$activity->email.PHP_EOL;
             }
         }
     }

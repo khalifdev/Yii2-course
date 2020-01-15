@@ -35,7 +35,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'files',
             'startDateTime',
             'endDateTime',
-            'isBlocked',
+            // 'isBlocked',
+            [
+                'attribute' => 'isBlocked',
+                'format' => 'raw',
+                'value' => function($model){
+                    return $model->isBlocked ? '<span>Да</span>' : '<span>Нет</span>';
+                }
+            ],
             'email:email',
             'createdAt',
             'updatedAt',

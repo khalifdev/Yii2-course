@@ -14,7 +14,7 @@ class DateTimeBehavior extends Behavior
     public function events()
     {
         return [
-            ActiveRecord::EVENT_BEFORE_VALIDATE => 'convertDateToDB',
+            ActiveRecord::EVENT_AFTER_VALIDATE => 'convertDateToDB',
             ActiveRecord::EVENT_AFTER_FIND => 'convertDateToApp',
             ActiveRecord::EVENT_BEFORE_UPDATE => 'setUpdatedAt'
         ];

@@ -5,6 +5,7 @@ namespace app\components;
 
 use app\base\BaseComponent;
 use app\models\Activity;
+use app\models\Calendar;
 use yii\web\UploadedFile;
 
 class ActivityComponent extends BaseComponent
@@ -42,5 +43,13 @@ class ActivityComponent extends BaseComponent
         return Activity::find()->andWhere('useNotification=1')
             ->andWhere('startDateTime>=:date',[':date' => date('Y-m-d')])
             ->andWhere('startDateTime<=:date1',[':date1' => date('Y-m-d').' 23:59:59'])->all();
+    }
+
+    public function findBlockedActivities(){
+        return Activity::find()
+            ->andWhere(['userId' => \Yii::$app->user->getIdentity()->id])
+            ->andWhere('isBlocked=1')
+            ->all();
+//        return Calendar::search()->andWhere('isBlocked=1')->all();
     }
 }

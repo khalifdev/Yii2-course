@@ -6,6 +6,7 @@ namespace app\models;
 
 use app\base\BaseModel;
 use app\behaviors\DateTimeBehavior;
+use app\models\rules\TimeBlockingRule;
 use yii\db\ActiveRecord;
 
 class Activity extends ActivityBase
@@ -45,7 +46,8 @@ class Activity extends ActivityBase
         return array_merge([
             [['title', 'email'],'trim'],
 //            [['startDateTime', 'endDateTime'], 'string'],
-            [['startDateTime', 'endDateTime'], 'date', 'format' => 'php:Y-m-d H:i'],
+            [['startDateTime', 'endDateTime'], 'date', 'format' => 'php:d.m.Y H:i'],
+            ['startDateTime', TimeBlockingRule::class],
             ['endDateTime', 'compare', 'compareAttribute' => 'startDateTime', 'operator'=>'>='],
             ['description','string','max' => 300, 'min'=>1],
             [['isBlocked', 'useNotification'],'boolean'],
