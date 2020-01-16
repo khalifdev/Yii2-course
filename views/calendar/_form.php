@@ -19,12 +19,13 @@ use kartik\datetime\DateTimePicker;
 
     <?=$form->field($model,'files[]')->fileInput(['multiple' => true])?>
 
-    <?= $form->field($model, 'startDateTime')->widget(DateTimePicker::class, [
+    <?= $form->field($model, 'startDateTime',['enableClientValidation' => false, 'enableAjaxValidation' => true])
+        ->widget(DateTimePicker::class, [
         'name' => 'startDateTime',
         'value' => '18-06-1018, 14:45',
         'pluginOptions' => [
             'autoclose'=>true,
-            'format' => 'd.m.yyyy hh:ii'
+            'format' => 'dd.mm.yyyy hh:ii'
         ]
     ]);
     ?>
@@ -33,7 +34,7 @@ use kartik\datetime\DateTimePicker;
         'value' => '18-06-1018, 14:45',
         'pluginOptions' => [
             'autoclose'=>true,
-            'format' => 'd.m.yyyy hh:ii'
+            'format' => 'dd.mm.yyyy hh:ii'
         ]
     ]);
     ?>

@@ -6,6 +6,7 @@ namespace app\models;
 
 use app\base\BaseModel;
 use app\behaviors\DateTimeBehavior;
+use app\models\rules\TimeBlockingRule;
 use yii\db\ActiveRecord;
 
 class Activity extends ActivityBase
@@ -28,39 +29,31 @@ class Activity extends ActivityBase
     public function behaviors()
     {
         return [
-            ['class'=>DateTimeBehavior::class, 'dateTime' => 'startDateTime'],
-            ['class'=>DateTimeBehavior::class, 'dateTime' => 'endDateTime'],
+            ['class'=>DateTimeBehavior::class,
+                'dateTimeFields' => [
+                    'startDateTime',
+                    'endDateTime',
+                    'createdAt',
+                    'updatedAt'
+                ]
+            ],
+//            ['class'=>DateTimeBehavior::class, 'dateTime' => 'endDateTime'],
         ];
     }
-
-//    public function beforeValidate()
-//    {
-//        if (!empty($this->startDateTime)) {
-//            $date = \DateTime::createFromFormat('d-m-Y H:i', $this->startDateTime);
-//            if ($date) {
-//                $this->startDateTime = $date->format('Y-m-d H:i');
-//            }
-//        }
-//        if (!empty($this->endDateTime)) {
-//            $date = \DateTime::createFromFormat('d-m-Y H:i', $this->endDateTime);
-//            if ($date) {
-//                $this->endDateTime = $date->format('Y-m-d H:i');
-//            }
-//        }
-//        return parent::beforeValidate();
-//    }
 
     public function rules()
     {
         return array_merge([
-            ['title', 'trim'],
+            [['title', 'email'],'trim'],
 //            [['startDateTime', 'endDateTime'], 'string'],
-            [['startDateTime', 'endDateTime'], 'date', 'format' => 'php:Y-m-d H:i'],
+            [['startDateTime', 'endDateTime'], 'date', 'format' => 'php:d.m.Y H:i'],
+            ['startDateTime', TimeBlockingRule::class],
             ['endDateTime', 'compare', 'compareAttribute' => 'startDateTime', 'operator'=>'>='],
             ['description','string','max' => 300, 'min'=>1],
             [['isBlocked', 'useNotification'],'boolean'],
 //            ['repeatType', 'in', 'range' => array_keys(self::REPEAT_TYPE)],
             ['email', 'email'],
+            [['email', 'files'] , 'default'],
             ['email', 'required', 'when' => function ($model) {
                 return $model->useNotification;
             }],

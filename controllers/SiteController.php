@@ -5,10 +5,8 @@ namespace app\controllers;
 use app\base\BaseController;
 use Yii;
 use yii\filters\AccessControl;
-use yii\web\Response;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
+use yii\web\Response;
 
 class SiteController extends BaseController
 {
@@ -18,19 +16,8 @@ class SiteController extends BaseController
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['logout'],
-                'rules' => [
-                    [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class' => VerbFilter::class,
                 'actions' => [
                     'logout' => ['post'],
                 ],
@@ -65,28 +52,6 @@ class SiteController extends BaseController
     }
 
     /**
-     * Login action.
-     *
-     * @return Response|string
-     */
-    public function actionLogin()
-    {
-        if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
-
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        }
-
-        $model->password = '';
-        return $this->render('login', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
      * Logout action.
      *
      * @return Response
@@ -98,23 +63,6 @@ class SiteController extends BaseController
         return $this->goHome();
     }
 
-    /**
-     * Displays contact page.
-     *
-     * @return Response|string
-     */
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
-    }
 
     /**
      * Displays about page.

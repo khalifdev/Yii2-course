@@ -2,23 +2,24 @@
 
 namespace app\controllers;
 
-use app\components\ActivityFilesComponent;
-use Yii;
-use app\models\Activity;
-use app\models\ActivitySearch;
 use app\base\BaseController;
+use app\components\ActivityFilesComponent;
+use app\models\Activity;
+use app\models\Calendar;
+use Yii;
 use yii\base\Exception;
 use yii\bootstrap\ActiveForm;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 use yii\web\Response;
 use yii\web\UploadedFile;
 
 /**
- * ActivitysController implements the CRUD actions for Activity model.
+ * CalendarController implements the CRUD actions for Activity model.
  */
-class ActivitysController extends BaseController
+class CalendarController extends BaseController
 {
     /**
      * {@inheritdoc}
@@ -26,8 +27,17 @@ class ActivitysController extends BaseController
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::class,
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin', 'user'],
+                    ],
+                ],
+            ],
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['POST'],
                 ],
@@ -41,7 +51,7 @@ class ActivitysController extends BaseController
      */
     public function actionIndex()
     {
-        $searchModel = new ActivitySearch();
+        $searchModel = new Calendar();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -99,8 +109,6 @@ class ActivitysController extends BaseController
 
             // сохранение Активности
             if (!$model->save()) {
-                print_r($model->attributes);
-                exit();
                 throw new Exception('Ошибка добавления активности!', 500);
             }
 
@@ -129,7 +137,25 @@ class ActivitysController extends BaseController
             throw new HttpException(403,'Доступ запрещён!');
         }
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+
+            // если запрос асинхронный, возвращаем отвалидированную форму
+            if(\Yii::$app->request->isAjax){
+                \Yii::$app->response->format=Response::FORMAT_JSON;
+                return ActiveForm::validate($model);
+            }
+
+            // обработка файлов
+            $model->files = UploadedFile::getInstances($model, 'files');
+            if (!ActivityFilesComponent::addFiles($model)) {
+                throw new Exception('Ошибка сохранения файлов!', 500);
+            }
+
+            // сохранение Активности
+            if (!$model->save()) {
+                throw new Exception('Ошибка обновления активности!', 500);
+            }
+
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -172,6 +198,6 @@ class ActivitysController extends BaseController
             return $model;
         }
 
-        throw new NotFoundHttpException('The requested page does not exist.');
+        throw new NotFoundHttpException('Запрошенная страница отсутствует.');
     }
 }

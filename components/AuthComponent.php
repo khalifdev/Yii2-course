@@ -9,29 +9,11 @@ use app\models\Users;
 
 class AuthComponent extends BaseComponent
 {
-    public function signUp(Users $model) : bool
-    {
-        $model->scenarioSignUp();
-        if(!$model->validate(['email','password'])){
-            return false;
-        }
-
-        $model->passwordHash = $this->genPasswordHash($model->password);
-
-        if($model->save()){
-            return true;
-        }
-        return false;
-    }
-
-    public function genPasswordHash(string $password)
-    {
-        return \Yii::$app->security->generatePasswordHash($password);
-    }
 
     public function signIn(Users $model) : bool
     {
         $model->scenarioSignIn();
+
         if(!$model->validate(['email','password'])){
             return false;
         }
@@ -46,7 +28,30 @@ class AuthComponent extends BaseComponent
         return \Yii::$app->user->login($user);
     }
 
-    public function getUserByEmail($email): ?Users
+    public function signUp(Users $model) : bool
+    {
+        $model->scenarioSignUp();
+        if(!$model->validate(['email','password'])){
+            return false;
+        }
+
+        $model->passwordHash = $this->genPasswordHash($model->password);
+
+        if($model->save()){
+            \Yii::$app->user->login($model);
+            \Yii::$app->rbac->assignNewUser();
+            return true;
+        }
+        return false;
+    }
+
+    public function genPasswordHash(string $password)
+    {
+        return \Yii::$app->security->generatePasswordHash($password);
+    }
+
+
+    public function getUserByEmail($email): ? Users
     {
         return Users::find()->andWhere(['email'=>$email])->one();
     }

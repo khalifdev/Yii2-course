@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Activity */
 
-$this->title = 'Update Activity: ' . $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Activities', 'url' => ['index']];
+$this->title = 'Редактирование активности: ' . $model->title;
+$this->params['breadcrumbs'][] = ['label' => 'Активности', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Редактирование';
 ?>
 <div class="activity-update">
 

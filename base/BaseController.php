@@ -12,19 +12,21 @@ class BaseController extends Controller
 
     public function beforeAction($action)
     {
-        if(\Yii::$app->user->isGuest)
-        {
-            return $this->redirect('/auth/sign-in');
-//            throw new HttpException(401,'Not Auth');
-        }
+//        if(\Yii::$app->user->isGuest)
+//        {
+//            return $this->redirect('/auth/sign-in');
+////            throw new HttpException(401,'Not Auth');
+//        }
 
-        $this->view->params['lastPage'] = \Yii::$app->session->getFlash('lastPage');
+//        $this->view->params['lastPage'] = \Yii::$app->session->getFlash('lastPage');
+
         return parent::beforeAction($action);
     }
 
     public function afterAction($action, $result)
     {
-        \Yii::$app->session->setFlash('lastPage',\Yii::$app->request->url);
+//        \Yii::$app->session->setFlash('lastPage',\Yii::$app->request->url);
+
         return parent::afterAction($action, $result);
     }
 }

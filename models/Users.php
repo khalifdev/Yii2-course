@@ -38,6 +38,7 @@ class Users extends UsersBase implements IdentityInterface
     {
         return array_merge([
             ['password', 'required'],
+            ['email','email'],
             [['email'], 'unique', 'on'=>self::SCENARIO_SIGNUP],
             [['email'], 'exist', 'on'=>self::SCENARIO_SIGNIN],
         ], parent::rules());
